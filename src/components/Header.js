@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -45,7 +45,7 @@ const Header = () => {
                         </select>
                       </div>
                       <div className="support d-none d-sm-block">
-                        <p>Need Help? <a href="tel:+001123456789">+001 123 456 789</a></p>
+                        <p>Need Help? <NavLink href="tel:+001123456789">+001 123 456 789</NavLink></p>
                       </div>
                     </div>
                   </div>
@@ -53,10 +53,13 @@ const Header = () => {
                     <div className="header-inner-end text-md-end">
                       <div className="ovic-menu-wrapper">
                         <ul>
-                          <li><a href="about.html">About Us</a></li>
-                          <li><a href="contact.html">Order Tracking</a></li>
-                          <li><a href="contact.html">Contact Us</a></li>
-                          <li><a href="faq.html">FAQs</a></li>
+                        <li><NavLink to={'/home'}>Product</NavLink></li>
+                        <li><NavLink to={'/product'}>ProductDetails</NavLink></li>
+                        <li><NavLink to={'/cart'}>Cart</NavLink></li>
+                        <li><NavLink to={'/userprofile'}>Profile</NavLink></li>
+
+                          <li><NavLink>Contact Us</NavLink></li>
+                          
                         </ul>
                       </div>
                     </div>
@@ -72,7 +75,7 @@ const Header = () => {
                   <div className="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                     <div className="header__info">
                       <div className="logo">
-                        <a href="index.html" className="logo-image"><img src="https://wphix.com/template/dukamarket/dukamarket/assets/img/logo/logo1.svg" alt="logo" /></a>
+                        <NavLink className="logo-image"><img src="https://wphix.com/template/dukamarket/dukamarket/assets/img/logo/logo1.svg" alt="logo" /></NavLink>
                       </div>
                     </div>
                   </div>
@@ -102,78 +105,80 @@ const Header = () => {
                       </form>
                     </div>
                   </div>
-                  <div className="col-xl-4 col-lg-5 col-md-8 col-sm-8">
-                    <div className="header-action">
-                      <div className="block-userlink">
-                        <a className="icon-link" href="my-account.html">
-                          <i className="flaticon-user" />
-                          <span className="text">
-                            <span className="sub">Login </span>
-                            My Account </span>
-                        </a>
-                      </div>
-                      <div className="block-wishlist action">
-                        <a className="icon-link" href="wishlist.html">
-                          <i className="flaticon-heart" />
-                          <span className="count">0</span>
-                          <span className="text">
-                            <span className="sub">Favorite</span>
-                            My Wishlist </span>
-                        </a>
-                      </div>
-                      <div className="block-cart action">
-                        <a className="icon-link" href="cart.html">
-                          <i className="flaticon-shopping-bag" />
-                          <span className="count">1</span>
-                          <span className="text">
-                            <span className="sub">Your Cart:</span>
-                            $00.00 </span>
-                        </a>
-                        <div className="cart">
-                          <div className="cart__mini">
-                            <ul>
-                              <li>
-                                <div className="cart__title">
-                                  <h4>Your Cart</h4>
-                                  <span>(1 Item in Cart)</span>
-                                </div>
-                              </li>
-                              <li>
-                                <div className="cart__item d-flex justify-content-between align-items-center">
-                                  <div className="cart__inner d-flex">
-                                    <div className="cart__thumb">
-                                      <a href="product-details.html">
-                                        <img src="assets/img/cart/20.jpg" alt />
-                                      </a>
-                                    </div>
-                                    <div className="cart__details">
-                                      <h6><a href="product-details.html"> Samsung C49J89: £875, Debenhams Plus</a></h6>
-                                      <div className="cart__price">
-                                        <span>$255.00</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div className="cart__del">
-                                    <a href="#"><i className="fal fa-times" /></a>
-                                  </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div className="cart__sub d-flex justify-content-between align-items-center">
-                                  <h6>Subtotal</h6>
-                                  <span className="cart__sub-total">$255.00</span>
-                                </div>
-                              </li>
-                              <li>
-                                <a href="cart.html" className="wc-cart mb-10">View cart</a>
-                                <a href="checkout.html" className="wc-checkout">Checkout</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
+                 <div className="col-xl-4 col-lg-5 col-md-8 col-sm-8">
+  <div className="header-action">
+    <div className="block-userlink">
+      <a className="icon-link">
+        <i className="flaticon-user" />
+        <span className="text">
+          <span className="sub">Login </span>
+          My Account </span>
+      </a>
+    </div>
+    <div className="block-wishlist action">
+      <a className="icon-link" href="wishlist.html">
+        <i className="flaticon-heart" />
+        <span className="count">0</span>
+        <span className="text">
+          <span className="sub">Favorite</span>
+          My Wishlist </span>
+      </a>
+    </div>
+    <div className="block-cart action">
+      <a className="icon-link" href="cart.html">
+        <i className="flaticon-shopping-bag" />
+        <span className="count">1</span>
+        <span className="text">
+          <span className="sub">Your Cart:</span>
+          $00.00 </span>
+      </a>
+      <div className="cart">
+        <div className="cart__mini">
+          <ul>
+            <li>
+              <div className="cart__title">
+                <h4>Your Cart</h4>
+                <span>(1 Item in Cart)</span>
+              </div>
+            </li>
+            <li>
+              <div className="cart__item d-flex justify-content-between align-items-center">
+                <div className="cart__inner d-flex">
+                  <div className="cart__thumb">
+                    <a href="product-details.html">
+                      <img src="assets/img/cart/20.jpg" alt />
+                    </a>
+                  </div>
+                  <div className="cart__details">
+                    <h6><a href="product-details.html"> Samsung C49J89:
+                        £875, Debenhams Plus </a></h6>
+                    <div className="cart__price">
+                      <span>$255.00</span>
                     </div>
                   </div>
+                </div>
+                <div className="cart__del">
+                  <a href="#"><i className="fal fa-times" /></a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="cart__sub d-flex justify-content-between align-items-center">
+                <h6>Subtotal</h6>
+                <span className="cart__sub-total">$255.00</span>
+              </div>
+            </li>
+            <li>
+              <a href="cart.html" className="wc-cart mb-10">View cart</a>
+              <a href="checkout.html" className="wc-checkout">Checkout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
                 </div>
               </div>
             </div>
@@ -189,170 +194,170 @@ const Header = () => {
                         <nav id="mobile-menu" style={{ display: 'block' }}>
                           <ul>
                             <li>
-                              <a href="shop.html">All Categories <i className="far fa-angle-down" /></a>
+                              <NavLink>All Categories <i className="far fa-angle-down" /></NavLink>
                               <ul className="mega-menu">
-                                <li><a href="shop.html">Shop Pages</a>
+                                <li><NavLink>Shop Pages</NavLink>
                                   <ul className="mega-item">
-                                    <li><a href="product-details.html">Standard SHop Page</a></li>
-                                    <li><a href="product-details.html">Shop Right Sidebar</a></li>
-                                    <li><a href="product-details.html">Shop Left Sidebar</a></li>
-                                    <li><a href="product-details.html">Shop 3 Column</a></li>
-                                    <li><a href="product-details.html">Shop 4 Column</a></li>
+                                    <li><NavLink>Standard SHop Page</NavLink></li>
+                                    <li><NavLink>Shop Right Sidebar</NavLink></li>
+                                    <li><NavLink>Shop Left Sidebar</NavLink></li>
+                                    <li><NavLink>Shop 3 Column</NavLink></li>
+                                    <li><NavLink>Shop 4 Column</NavLink></li>
                                   </ul>
                                 </li>
-                                <li><a href="shop.html">Product Pages</a>
+                                <li><NavLink>Product Pages</NavLink>
                                   <ul className="mega-item">
-                                    <li><a href="product-details.html">Product Details</a></li>
-                                    <li><a href="product-details.html">Product V2</a></li>
-                                    <li><a href="product-details.html">Product V3</a></li>
-                                    <li><a href="product-details.html">Varriable Product</a></li>
-                                    <li><a href="product-details.html">External Product</a></li>
+                                    <li><NavLink>Product Details</NavLink></li>
+                                    <li><NavLink>Product V2</NavLink></li>
+                                    <li><NavLink>Product V3</NavLink></li>
+                                    <li><NavLink>Varriable Product</NavLink></li>
+                                    <li><NavLink>External Product</NavLink></li>
                                   </ul>
                                 </li>
-                                <li><a href="shop.html">Other Pages</a>
+                                <li><NavLink>Other Pages</NavLink>
                                   <ul className="mega-item">
-                                    <li><a href="product-details.html">wishlist</a></li>
-                                    <li><a href="product-details.html">Shopping Cart</a></li>
-                                    <li><a href="product-details.html">Checkout</a></li>
-                                    <li><a href="product-details.html">Login</a></li>
-                                    <li><a href="product-details.html">Register</a></li>
+                                    <li><NavLink>wishlist</NavLink></li>
+                                    <li><NavLink>Shopping Cart</NavLink></li>
+                                    <li><NavLink>Checkout</NavLink></li>
+                                    <li><NavLink>Login</NavLink></li>
+                                    <li><NavLink>Register</NavLink></li>
                                   </ul>
                                 </li>
-                                <li><a href="shop.html">Phone &amp; Tablets</a>
+                                <li><NavLink>Phone &amp; Tablets</NavLink>
                                   <ul className="mega-item">
-                                    <li><a href="product-details.html">Catagory 1</a></li>
-                                    <li><a href="product-details.html">Catagory 2</a></li>
-                                    <li><a href="product-details.html">Catagory 3</a></li>
+                                    <li><NavLink>Catagory 1</NavLink></li>
+                                    <li><NavLink>Catagory 2</NavLink></li>
+                                    <li><NavLink>Catagory 3</NavLink></li>
                                   </ul>
                                 </li>
-                                <li><a href="shop.html">Phone &amp; Tablets</a>
+                                <li><NavLink>Phone &amp; Tablets</NavLink>
                                   <ul className="mega-item">
-                                    <li><a href="product-details.html">Catagory 1</a></li>
-                                    <li><a href="product-details.html">Catagory 2</a></li>
-                                    <li><a href="product-details.html">Catagory 3</a></li>
+                                    <li><NavLink>Catagory 1</NavLink></li>
+                                    <li><NavLink>Catagory 2</NavLink></li>
+                                    <li><NavLink>Catagory 3</NavLink></li>
                                   </ul>
                                 </li>
                               </ul>
                             </li>
                             <li>
-                              <a href="shop.html">Phone and Electronics <i className="far fa-angle-down" /></a>
+                              <NavLink>Phone and Electronics <i className="far fa-angle-down" /></NavLink>
                               <ul className="mega-menu mega-menu-2">
-                                <li><a href="shop.html">Shop Pages</a>
+                                <li><NavLink>Shop Pages</NavLink>
                                   <ul className="mega-item">
-                                    <li><a href="product-details.html">Standard SHop Page</a></li>
-                                    <li><a href="product-details.html">Shop Right Sidebar</a></li>
-                                    <li><a href="product-details.html">Shop Left Sidebar</a></li>
-                                    <li><a href="product-details.html">Shop 3 Column</a></li>
-                                    <li><a href="product-details.html">Shop 4 Column</a></li>
+                                    <li><NavLink>Standard SHop Page</NavLink></li>
+                                    <li><NavLink>Shop Right Sidebar</NavLink></li>
+                                    <li><NavLink>Shop Left Sidebar</NavLink></li>
+                                    <li><NavLink>Shop 3 Column</NavLink></li>
+                                    <li><NavLink>Shop 4 Column</NavLink></li>
                                   </ul>
                                 </li>
-                                <li><a href="shop.html">Product Pages</a>
+                                <li><NavLink>Product Pages</NavLink>
                                   <ul className="mega-item">
-                                    <li><a href="product-details.html">Product Details</a></li>
-                                    <li><a href="product-details.html">Product V2</a></li>
-                                    <li><a href="product-details.html">Product V3</a></li>
-                                    <li><a href="product-details.html">Varriable Product</a></li>
-                                    <li><a href="product-details.html">External Product</a></li>
+                                    <li><NavLink>Product Details</NavLink></li>
+                                    <li><NavLink>Product V2</NavLink></li>
+                                    <li><NavLink>Product V3</NavLink></li>
+                                    <li><NavLink>Varriable Product</NavLink></li>
+                                    <li><NavLink>External Product</NavLink></li>
                                   </ul>
                                 </li>
-                                <li><a href="shop.html">Other Pages</a>
+                                <li><NavLink>Other Pages</NavLink>
                                   <ul className="mega-item">
-                                    <li><a href="product-details.html">wishlist</a></li>
-                                    <li><a href="product-details.html">Shopping Cart</a></li>
-                                    <li><a href="product-details.html">Checkout</a></li>
-                                    <li><a href="product-details.html">Login</a></li>
-                                    <li><a href="product-details.html">Register</a></li>
+                                    <li><NavLink>wishlist</NavLink></li>
+                                    <li><NavLink>Shopping Cart</NavLink></li>
+                                    <li><NavLink>Checkout</NavLink></li>
+                                    <li><NavLink>Login</NavLink></li>
+                                    <li><NavLink>Register</NavLink></li>
                                   </ul>
                                 </li>
-                                <li><a href="shop.html">Phone &amp; Tablets</a>
+                                <li><NavLink>Phone &amp; Tablets</NavLink>
                                   <ul className="mega-item">
-                                    <li><a href="product-details.html">Catagory 1</a></li>
-                                    <li><a href="product-details.html">Catagory 2</a></li>
-                                    <li><a href="product-details.html">Catagory 3</a></li>
+                                    <li><NavLink>Catagory 1</NavLink></li>
+                                    <li><NavLink>Catagory 2</NavLink></li>
+                                    <li><NavLink>Catagory 3</NavLink></li>
                                   </ul>
                                 </li>
-                                <li><a href="shop.html">Phone &amp; Tablets</a>
+                                <li><NavLink>Phone &amp; Tablets</NavLink>
                                   <ul className="mega-item">
-                                    <li><a href="product-details.html">Catagory 1</a></li>
-                                    <li><a href="product-details.html">Catagory 2</a></li>
-                                    <li><a href="product-details.html">Catagory 3</a></li>
+                                    <li><NavLink>Catagory 1</NavLink></li>
+                                    <li><NavLink>Catagory 2</NavLink></li>
+                                    <li><NavLink>Catagory 3</NavLink></li>
                                   </ul>
                                 </li>
                               </ul>
                             </li>
                             <li>
-                              <a href="shop.html">Best Seller Products
+                              <NavLink>Best Seller Products
                                 <span className="cat-label">hot!</span>
                                 <i className="far fa-angle-down" />
-                              </a>
+                              </NavLink>
                               <ul className="mega-menu">
-                                <li><a href="shop.html">Shop Pages</a>
+                                <li><NavLink>Shop Pages</NavLink>
                                   <ul className="mega-item">
-                                    <li><a href="product-details.html">Standard SHop Page</a></li>
-                                    <li><a href="product-details.html">Shop Right Sidebar</a></li>
-                                    <li><a href="product-details.html">Shop Left Sidebar</a></li>
-                                    <li><a href="product-details.html">Shop 3 Column</a></li>
-                                    <li><a href="product-details.html">Shop 4 Column</a></li>
+                                    <li><NavLink>Standard SHop Page</NavLink></li>
+                                    <li><NavLink>Shop Right Sidebar</NavLink></li>
+                                    <li><NavLink>Shop Left Sidebar</NavLink></li>
+                                    <li><NavLink>Shop 3 Column</NavLink></li>
+                                    <li><NavLink>Shop 4 Column</NavLink></li>
                                   </ul>
                                 </li>
-                                <li><a href="shop.html">Product Pages</a>
+                                <li><NavLink>Product Pages</NavLink>
                                   <ul className="mega-item">
-                                    <li><a href="product-details.html">Product Details</a></li>
-                                    <li><a href="product-details.html">Product V2</a></li>
-                                    <li><a href="product-details.html">Product V3</a></li>
-                                    <li><a href="product-details.html">Varriable Product</a></li>
-                                    <li><a href="product-details.html">External Product</a></li>
+                                    <li><NavLink>Product Details</NavLink></li>
+                                    <li><NavLink>Product V2</NavLink></li>
+                                    <li><NavLink>Product V3</NavLink></li>
+                                    <li><NavLink>Varriable Product</NavLink></li>
+                                    <li><NavLink>External Product</NavLink></li>
                                   </ul>
                                 </li>
-                                <li><a href="shop.html">Other Pages</a>
+                                <li><NavLink>Other Pages</NavLink>
                                   <ul className="mega-item">
-                                    <li><a href="product-details.html">wishlist</a></li>
-                                    <li><a href="product-details.html">Shopping Cart</a></li>
-                                    <li><a href="product-details.html">Checkout</a></li>
-                                    <li><a href="product-details.html">Login</a></li>
-                                    <li><a href="product-details.html">Register</a></li>
+                                    <li><NavLink>wishlist</NavLink></li>
+                                    <li><NavLink>Shopping Cart</NavLink></li>
+                                    <li><NavLink>Checkout</NavLink></li>
+                                    <li><NavLink>Login</NavLink></li>
+                                    <li><NavLink>Register</NavLink></li>
                                   </ul>
                                 </li>
-                                <li><a href="shop.html">Phone &amp; Tablets</a>
+                                <li><NavLink>Phone &amp; Tablets</NavLink>
                                   <ul className="mega-item">
-                                    <li><a href="product-details.html">Catagory 1</a></li>
-                                    <li><a href="product-details.html">Catagory 2</a></li>
-                                    <li><a href="product-details.html">Catagory 3</a></li>
+                                    <li><NavLink>Catagory 1</NavLink></li>
+                                    <li><NavLink>Catagory 2</NavLink></li>
+                                    <li><NavLink>Catagory 3</NavLink></li>
                                   </ul>
                                 </li>
-                                <li><a href="shop.html">Phone &amp; Tablets</a>
+                                <li><NavLink>Phone &amp; Tablets</NavLink>
                                   <ul className="mega-item">
-                                    <li><a href="product-details.html">Catagory 1</a></li>
-                                    <li><a href="product-details.html">Catagory 2</a></li>
-                                    <li><a href="product-details.html">Catagory 3</a></li>
+                                    <li><NavLink>Catagory 1</NavLink></li>
+                                    <li><NavLink>Catagory 2</NavLink></li>
+                                    <li><NavLink>Catagory 3</NavLink></li>
                                   </ul>
                                 </li>
                               </ul>
                             </li>
                             <li>
-                              <a href="shop.html">Top 10 Offers
+                              <NavLink>Top 10 Offers
                                 <span className="cat-label green">new!</span>
-                              </a>
+                              </NavLink>
                             </li>
                             <li>
-                              <a href="shop.html">New Arrivals <i className="far fa-angle-down" /></a>
+                              <NavLink>New Arrivals <i className="far fa-angle-down" /></NavLink>
                               <ul className="submenu">
-                                <li><a href="shop.html">Home Appliances</a></li>
-                                <li><a href="shop.html">Technology</a>
+                                <li><NavLink>Home Appliances</NavLink></li>
+                                <li><NavLink>Technology</NavLink>
                                   <ul className="submenu">
-                                    <li><a href="shop.html">Storage Devices</a></li>
-                                    <li><a href="shop.html">Monitors</a></li>
-                                    <li><a href="shop.html">Laptops</a></li>
+                                    <li><NavLink>Storage Devices</NavLink></li>
+                                    <li><NavLink>Monitors</NavLink></li>
+                                    <li><NavLink>Laptops</NavLink></li>
                                   </ul>
                                 </li>
-                                <li><a href="shop.html">Office Equipments</a></li>
+                                <li><NavLink>Office Equipments</NavLink></li>
                               </ul>
                             </li>
-                            <li><a href="shop.html">TV &amp; Audio</a></li>
-                            <li><a href="shop.html">Electronics &amp; Digital</a></li>
-                            <li className="d-laptop-none"><a href="shop.html">Fashion &amp; Clothings</a></li>
-                            <li className="d-laptop-none"><a href="shop.html">Jewelry &amp; Watches</a></li>
-                            <li><a href="shop.html">Health &amp; Beauty</a></li>
+                            <li><NavLink>TV &amp; Audio</NavLink></li>
+                            <li><NavLink>Electronics &amp; Digital</NavLink></li>
+                            <li className="d-laptop-none"><NavLink>Fashion &amp; Clothings</NavLink></li>
+                            <li className="d-laptop-none"><NavLink>Jewelry &amp; Watches</NavLink></li>
+                            <li><NavLink>Health &amp; Beauty</NavLink></li>
                           </ul>
                         </nav>
                       </div>
@@ -368,119 +373,119 @@ const Header = () => {
                       <nav>
                         <ul>
                           <li>
-                            <a href="index.html" className="active">Home <i className="far fa-angle-down" /></a>
+                            <NavLink className="active">Home <i className="far fa-angle-down" /></NavLink>
                             <ul className="megamenu-1">
-                              <li><a href="index.html">Home Pages</a>
+                              <li><NavLink>Home Pages</NavLink>
                                 <ul className="mega-item">
-                                  <li><a href="index.html" className="active">Home One</a></li>
-                                  <li><a href="index-2.html">Home Two</a></li>
-                                  <li><a href="index-3.html">Home Three</a></li>
-                                  <li><a href="product-details.html">Shop 3 Column</a></li>
-                                  <li><a href="product-details.html">Shop 4 Column</a></li>
+                                  <li><NavLink className="active">Home One</NavLink></li>
+                                  <li><NavLink>Home Two</NavLink></li>
+                                  <li><NavLink>Home Three</NavLink></li>
+                                  <li><NavLink>Shop 3 Column</NavLink></li>
+                                  <li><NavLink>Shop 4 Column</NavLink></li>
                                 </ul>
                               </li>
-                              <li><a href="shop.html">Product Pages</a>
+                              <li><NavLink>Product Pages</NavLink>
                                 <ul className="mega-item">
-                                  <li><a href="product-details.html">Product Details</a></li>
-                                  <li><a href="product-details.html">Product V2</a></li>
-                                  <li><a href="product-details.html">Product V3</a></li>
-                                  <li><a href="product-details.html">Varriable Product</a></li>
-                                  <li><a href="product-details.html">External Product</a></li>
+                                  <li><NavLink>Product Details</NavLink></li>
+                                  <li><NavLink>Product V2</NavLink></li>
+                                  <li><NavLink>Product V3</NavLink></li>
+                                  <li><NavLink>Varriable Product</NavLink></li>
+                                  <li><NavLink>External Product</NavLink></li>
                                 </ul>
                               </li>
-                              <li><a href="shop.html">Other Pages</a>
+                              <li><NavLink>Other Pages</NavLink>
                                 <ul className="mega-item">
-                                  <li><a href="product-details.html">wishlist</a></li>
-                                  <li><a href="product-details.html">Shopping Cart</a></li>
-                                  <li><a href="product-details.html">Checkout</a></li>
-                                  <li><a href="product-details.html">Login</a></li>
-                                  <li><a href="product-details.html">Register</a></li>
+                                  <li><NavLink>wishlist</NavLink></li>
+                                  <li><NavLink>Shopping Cart</NavLink></li>
+                                  <li><NavLink>Checkout</NavLink></li>
+                                  <li><NavLink>Login</NavLink></li>
+                                  <li><NavLink>Register</NavLink></li>
                                 </ul>
                               </li>
-                              <li><a href="shop.html">Phone &amp; Tablets</a>
+                              <li><NavLink>Phone &amp; Tablets</NavLink>
                                 <ul className="mega-item">
-                                  <li><a href="product-details.html">Catagory 1</a></li>
-                                  <li><a href="product-details.html">Catagory 2</a></li>
-                                  <li><a href="product-details.html">Catagory 3</a></li>
-                                  <li><a href="product-details.html">Catagory 4</a></li>
+                                  <li><NavLink>Catagory 1</NavLink></li>
+                                  <li><NavLink>Catagory 2</NavLink></li>
+                                  <li><NavLink>Catagory 3</NavLink></li>
+                                  <li><NavLink>Catagory 4</NavLink></li>
                                 </ul>
                               </li>
-                              <li><a href="shop.html">Phone &amp; Tablets</a>
+                              <li><NavLink>Phone &amp; Tablets</NavLink>
                                 <ul className="mega-item">
-                                  <li><a href="product-details.html">Catagory 1</a></li>
-                                  <li><a href="product-details.html">Catagory 2</a></li>
-                                  <li><a href="product-details.html">Catagory 3</a></li>
-                                  <li><a href="product-details.html">Catagory 4</a></li>
+                                  <li><NavLink>Catagory 1</NavLink></li>
+                                  <li><NavLink>Catagory 2</NavLink></li>
+                                  <li><NavLink>Catagory 3</NavLink></li>
+                                  <li><NavLink>Catagory 4</NavLink></li>
                                 </ul>
                               </li>
                             </ul>
                           </li>
-                          <li><a href="about.html">About Us</a></li>
-                          <li className="has-mega"><a href="shop.html">Shop <i className="far fa-angle-down" /></a>
+                          <li><NavLink>About Us</NavLink></li>
+                          <li className="has-mega"><NavLink>Shop <i className="far fa-angle-down" /></NavLink>
                             <div className="mega-menu">
                               <div className="container container-mega">
                                 <ul>
                                   <li>
                                     <ul>
-                                      <li className="title"><a href="shop.html">SHOP LAYOUT</a></li>
-                                      <li><a href="shop.html">Pagination</a></li>
-                                      <li><a href="shop.html">Ajax Load More</a></li>
-                                      <li><a href="shop.html">Infinite Scroll</a></li>
-                                      <li><a href="shop.html">Sidebar Right</a></li>
-                                      <li><a href="shop.html">Sidebar Left</a></li>
+                                      <li className="title"><NavLink>SHOP LAYOUT</NavLink></li>
+                                      <li><NavLink>Pagination</NavLink></li>
+                                      <li><NavLink>Ajax Load More</NavLink></li>
+                                      <li><NavLink>Infinite Scroll</NavLink></li>
+                                      <li><NavLink>Sidebar Right</NavLink></li>
+                                      <li><NavLink>Sidebar Left</NavLink></li>
                                     </ul>
                                   </li>
                                   <li>
                                     <ul>
-                                      <li className="title"><a href="shop.html">SHOP PAGES</a></li>
-                                      <li><a href="shop.html">List View</a></li>
-                                      <li><a href="shop.html">Small Products</a></li>
-                                      <li><a href="shop.html">Large Products</a></li>
-                                      <li><a href="shop.html">Shop — 3 Items</a></li>
-                                      <li><a href="shop.html">Shop — 4 Items</a></li>
-                                      <li><a href="shop.html">Shop — 5 Items</a></li>
+                                      <li className="title"><NavLink>SHOP PAGES</NavLink></li>
+                                      <li><NavLink>List View</NavLink></li>
+                                      <li><NavLink>Small Products</NavLink></li>
+                                      <li><NavLink>Large Products</NavLink></li>
+                                      <li><NavLink>Shop — 3 Items</NavLink></li>
+                                      <li><NavLink>Shop — 4 Items</NavLink></li>
+                                      <li><NavLink>Shop — 5 Items</NavLink></li>
                                     </ul>
                                   </li>
                                   <li>
                                     <ul>
-                                      <li className="title"><a href="shop.html">PRODUCT LAYOUT</a></li>
-                                      <li><a href="shop.html">Description Sticky</a></li>
-                                      <li><a href="shop.html">Product Carousel</a></li>
-                                      <li><a href="shop.html">Gallery Modern</a></li>
-                                      <li><a href="shop.html">Thumbnail Left</a></li>
-                                      <li><a href="shop.html">Thumbnail Right</a></li>
-                                      <li><a href="shop.html">Thumbnail Botttom</a></li>
+                                      <li className="title"><NavLink>PRODUCT LAYOUT</NavLink></li>
+                                      <li><NavLink>Description Sticky</NavLink></li>
+                                      <li><NavLink>Product Carousel</NavLink></li>
+                                      <li><NavLink>Gallery Modern</NavLink></li>
+                                      <li><NavLink>Thumbnail Left</NavLink></li>
+                                      <li><NavLink>Thumbnail Right</NavLink></li>
+                                      <li><NavLink>Thumbnail Botttom</NavLink></li>
                                     </ul>
                                   </li>
                                   <li>
                                     <ul>
-                                      <li className="title"><a href="shop.html">Basketball</a></li>
-                                      <li><a href="shop.html">East Hampton Fleece</a></li>
-                                      <li><a href="shop.html">Faxon Canvas Low</a></li>
-                                      <li><a href="shop.html">Habitasse Dictumst</a></li>
-                                      <li><a href="shop.html">Kaoreet Lobortis</a></li>
-                                      <li><a href="shop.html">NikeCourt Zoom</a></li>
-                                      <li><a href="shop.html">NikeCourts Air Zoom</a></li>
+                                      <li className="title"><NavLink>Basketball</NavLink></li>
+                                      <li><NavLink>East Hampton Fleece</NavLink></li>
+                                      <li><NavLink>Faxon Canvas Low</NavLink></li>
+                                      <li><NavLink>Habitasse Dictumst</NavLink></li>
+                                      <li><NavLink>Kaoreet Lobortis</NavLink></li>
+                                      <li><NavLink>NikeCourt Zoom</NavLink></li>
+                                      <li><NavLink>NikeCourts Air Zoom</NavLink></li>
                                     </ul>
                                   </li>
                                   <li>
                                     <ul>
-                                      <li className="title"><a href="shop.html">Basketball</a></li>
-                                      <li><a href="shop.html">East Hampton Fleece</a></li>
-                                      <li><a href="shop.html">Faxon Canvas Low</a></li>
-                                      <li><a href="shop.html">Habitasse Dictumst</a></li>
-                                      <li><a href="shop.html">Kaoreet Lobortis</a></li>
-                                      <li><a href="shop.html">NikeCourt Zoom</a></li>
-                                      <li><a href="shop.html">NikeCourts Air Zoom</a></li>
+                                      <li className="title"><NavLink>Basketball</NavLink></li>
+                                      <li><NavLink>East Hampton Fleece</NavLink></li>
+                                      <li><NavLink>Faxon Canvas Low</NavLink></li>
+                                      <li><NavLink>Habitasse Dictumst</NavLink></li>
+                                      <li><NavLink>Kaoreet Lobortis</NavLink></li>
+                                      <li><NavLink>NikeCourt Zoom</NavLink></li>
+                                      <li><NavLink>NikeCourts Air Zoom</NavLink></li>
                                     </ul>
                                   </li>
                                   <li className="mega-image hover-effect" style={{ backgroundImage: 'url(assets/img/bg/menu-item.jpg)' }}>
                                     <ul>
-                                      <li><a href="shop.html">
+                                      <li><NavLink>
                                         <h4>Top Cameras <br /> Bestseller Products</h4>
                                         <h5>4K</h5>
                                         <h6>Sale Up To <span>60% Off</span></h6>
-                                      </a></li>
+                                      </NavLink></li>
                                     </ul>
                                   </li>
                                 </ul>
@@ -490,23 +495,23 @@ const Header = () => {
                               </div>
                             </div>
                           </li>
-                          <li><a href="blog.html">Blog <i className="far fa-angle-down" /></a>
+                          <li><NavLink href="blog.html">Blog <i className="far fa-angle-down" /></NavLink>
                             <ul className="submenu">
-                              <li><a href="blog.html">Blog</a></li>
-                              <li><a href="blog-details.html">Blog Details</a></li>
+                              <li><NavLink href="blog.html">Blog</NavLink></li>
+                              <li><NavLink href="blog-details.html">Blog Details</NavLink></li>
                             </ul>
                           </li>
                           <li>
-                            <a href="about.html">Pages <i className="far fa-angle-down" /></a>
+                            <NavLink>Pages <i className="far fa-angle-down" /></NavLink>
                             <ul className="submenu">
-                              <li><a href="my-account.html">My Account</a></li>
-                              <li><a href="product-details.html">Product Details</a></li>
-                              <li><a href="faq.html">FAQs pages</a></li>
-                              <li><a href="cart.html">Cart</a></li>
-                              <li><a href="wishlist.html">Wishlist</a></li>
-                              <li><a href="checkout.html">Checkout</a></li>
-                              <li><a href="contact.html">Contact Us</a></li>
-                              <li><a href="404.html">404 Error</a></li>
+                              <li><NavLink>My Account</NavLink></li>
+                              <li><NavLink>Product Details</NavLink></li>
+                              <li><NavLink>FAQs pages</NavLink></li>
+                              <li><NavLink>Cart</NavLink></li>
+                              <li><NavLink>Wishlist</NavLink></li>
+                              <li><NavLink>Checkout</NavLink></li>
+                              <li><NavLink>Contact Us</NavLink></li>
+                              <li><NavLink href="404.html">404 Error</NavLink></li>
                             </ul>
                           </li>
                         </ul>

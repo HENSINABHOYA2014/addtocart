@@ -6,7 +6,7 @@ const Slider = () => {
       <div>
         {/* banner__area-end */}
         {/* topsell__area-start */}
-        <div className="single-slider swiper-slide slider-height d-flex align-items-center" data-background="assets/img/slider/01-slide-1.jpg">
+        {/* <div className="single-slider swiper-slide slider-height d-flex align-items-center" src="https://wphix.com/template/dukamarket/dukamarket/assets/img/slider/01-slide-2.jpg">
   <div className="container">
     <div className="row">
       <div className="col-xl-5">
@@ -14,7 +14,7 @@ const Slider = () => {
           <div className="slider-top-btn" data-animation="fadeInLeft" data-delay="1.5s">
             <a href="product-details.html" className="st-btn b-radius">HOT DEALS</a>
           </div>
-          <h2 data-animation="fadeInLeft" data-delay="1.7s" className="pt-15 slider-title pb-5">SALE 30% OFF <br /> FUTURE FOOTBALL BOOTS</h2>
+          <h2 data-animation="fadeInLeft" data-delay="1.7s" className="pt-15 slider-title pb-5" style={{color:'black'}}>SALE 30% OFF <br /> FUTURE FOOTBALL BOOTS</h2>
           <p className="pr-20 slider_text" data-animation="fadeInLeft" data-delay="1.9s">
             Discount 30% On Products &amp; Free Shipping</p>
           <div className="slider-bottom-btn mt-75">
@@ -24,41 +24,9 @@ const Slider = () => {
       </div>
     </div>
   </div>
-</div>
+</div> */}
 
         {/* topsell__area-end */}
-        {/* banner__area-start */}
-        <section className="banner__area banner__area-d pb-10" style={{ fontFamily: 'Rubik' }}>
-          <div className="container">
-            <div className="row">
-              <div className="col-xl-6 col-lg-6 col-md-12">
-                <div className="banner__item p-relative w-img mb-30">
-                  <div className="banner__img">
-                    <NavLink ><img src="assets/img/banner/banner-4.jpg" alt /></NavLink>
-                  </div>
-                  <div className="banner__content">
-                    <span>Bestseller Products</span>
-                    <h6><NavLink >PC &amp; Docking Station</NavLink></h6>
-                    <p>Discount 20% Off, Top Quality Products</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-6 col-lg-6 col-md-12">
-                <div className="banner__item p-relative mb-30 w-img">
-                  <div className="banner__img">
-                    <NavLink ><img src="assets/img/banner/banner-5.jpg" alt /></NavLink>
-                  </div>
-                  <div className="banner__content">
-                    <span>Featured Products</span>
-                    <h6><NavLink >Accessories iPhone</NavLink></h6>
-                    <p>Free Shipping All Order Over $99</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* banner__area-end */}
       </div>
       {/* features__area-start */}
       <section className="features__area pt-20" style={{ fontFamily: 'Rubik' }}>
@@ -154,7 +122,7 @@ const Slider = () => {
       </section>
       {/* banner__area-end */}
       {/* banner__area-start */}
-      <section className="banner__area banner__area-d pb-10 ">
+      {/* <section className="banner__area banner__area-d pb-10 ">
         <div className="container">
           <div className="row">
             <div className="col-xl-6 col-lg-6 col-md-12">
@@ -164,7 +132,7 @@ const Slider = () => {
                 </div>
                 <div className="banner__content">
                   <span>Bestseller Products</span>
-                  <h6><NavLink>PC &amp; Docking Station</NavLink></h6>
+                  <h6><NavLink style={{color:'white'}}>PC &amp; Docking Station</NavLink></h6>
                   <p>Discount 20% Off, Top Quality Products</p>
                 </div>
               </div>
@@ -176,17 +144,17 @@ const Slider = () => {
                 </div>
                 <div className="banner__content">
                   <span>Featured Products</span>
-                  <h6><NavLink>Accessories iPhone</NavLink></h6>
+                  <h6><NavLink style={{color:'white'}}>Accessories iPhone</NavLink></h6>
                   <p>Free Shipping All Order Over $99</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* banner__area-end */}
       {/* featured-start */}
-      <section className="featured light-bg pt-55 pb-40 ">
+      {/* <section className="featured light-bg pt-55 pb-40 ">
         <div className="container">
           <div className="row">
             <div className="col-xl-12">
@@ -207,7 +175,7 @@ const Slider = () => {
                   <div className="col-md-6">
                     <div className="features-thum">
                       <div className="features-product-image w-img">
-                        <NavLink><img src="assets/img/features-product/fpb-1.jpg" alt /></NavLink>
+                        <NavLink><img src="https://wphix.com/template/dukamarket/dukamarket/assets/img/features-product/fpb-1.jpg" alt /></NavLink>
                       </div>
                       <div className="product__offer">
                         <span className="discount">-15%</span>
@@ -409,10 +377,10 @@ const Slider = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* featured-end */}
       {/* moveing-text-area-start */}
-      <section className="moveing-text-area">
+      {/* <section className="moveing-text-area">
         <div className="container">
           <div className="ovic-running">
             <div className="wrap">
@@ -425,10 +393,10 @@ const Slider = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* moveing-text-area-end */}
       {/* banner__area-start */}
-      <section className="banner__area pt-60 pb-25">
+      {/* <section className="banner__area pt-60 pb-25">
         <div className="container">
           <div className="row">
             <div className="col-xl-4 col-lg-6 col-md-12">
@@ -440,7 +408,7 @@ const Slider = () => {
                   <div className="banner-button mb-20">
                     <NavLink className="st-btn">HOT DEALS</NavLink>
                   </div>
-                  <h6><NavLink>Sale 30% Off <br /> Top Computer Case Gaming</NavLink></h6>
+                  <h6><NavLink style={{color:'white'}}>Sale 30% Off <br /> Top Computer Case Gaming</NavLink></h6>
                 </div>
               </div>
             </div>
@@ -452,7 +420,7 @@ const Slider = () => {
                       <NavLink><img src="https://wphix.com/template/dukamarket/dukamarket/assets/img/banner/banner-7.jpg" alt /></NavLink>
                     </div>
                     <div className="banner__content banner__content-sd text-center">
-                      <h6><NavLink>Electronic Deals</NavLink></h6>
+                      <h6><NavLink style={{color:'white'}}>Electronic Deals</NavLink></h6>
                       <p>Laptop, Computer, Smartphone, Gampad</p>
                       <div className="banner-button mt-20 d-none d-sm-block">
                         <NavLink className="st-btn-3 b-radius">Shop Deals</NavLink>
@@ -466,7 +434,7 @@ const Slider = () => {
                       <NavLink><img src="https://wphix.com/template/dukamarket/dukamarket/assets/img/banner/banner-8.jpg" alt /></NavLink>
                     </div>
                     <div className="banner__content">
-                      <h6><NavLink>Hot Products <br /> Laptop Ultra 4K 16”</NavLink>
+                      <h6><NavLink style={{color:'white'}}>Hot Products <br /> Laptop Ultra 4K 16”</NavLink>
                       </h6>
                       <p>Discount 20% On Products</p>
                     </div>
@@ -483,13 +451,13 @@ const Slider = () => {
                   <div className="banner-button mb-20">
                     <NavLink className="st-btn">HOT DEALS</NavLink>
                   </div>
-                  <h6><NavLink>Sport Edition <br /> Best Choice of The Year</NavLink></h6>
+                  <h6><NavLink style={{color:'white'}}>Sport Edition <br /> Best Choice of The Year</NavLink></h6>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* banner__area-end */}
       {/* brand-area-start */}
       {/* <section className="brand-area brand-area-d">

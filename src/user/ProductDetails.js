@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, NavLink, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import checkUserLogin from "./Userauth";
 
 const ProductDetails = () => {
     const navigate = useNavigate();
     const { productId } = useParams();
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState({});
 
     const getSingleProductRecord = async () => {
         try {
@@ -14,24 +14,59 @@ const ProductDetails = () => {
             if (singleRecord) {
                 setProduct(singleRecord.data);
             } else {
-                console.log("Record Not Fetch");
+                console.log("Record Not Fetched");
+                return false;
             }
         } catch (err) {
-            console.error(err);
-            console.log("Error fetching the product record.");
+            console.log(err);
+            return false;
         }
     }
 
-
-    const AddToCart = () => {
+    const AddToCart = (productId) => {
         if (!checkUserLogin()) {
             alert("Please Login");
-            navigate('/login')
+            navigate('/login');
+        } else {
+            // Yeh API request product ko directly check karti hai
+            axios.get(`http://localhost:8000/carts?productId=${productId}&userId=${checkUserLogin().id}`)
+                .then((res) => {
+                    if (res.data.length > 0) {
+                        alert("Product already added in cart");
+                        navigate('/product')
+                    } else {
+                        // Agar product cart mein available nahi hai, toh usse add karein
+                        axios.get(`http://localhost:8000/products/${productId}`)
+                            .then((res) => {
+                                axios.post(`http://localhost:8000/carts`, {
+                                    name: res.data.name,
+                                    price: res.data.price,
+                                    qty: res.data.qty,
+                                    image: res.data.image,
+                                    category: res.data.category,
+                                    productId: productId,
+                                    userId: checkUserLogin().id
+                                }).then((res) => {
+                                    alert("Product Successfully Added");
+                                    navigate('/cart');
+                                }).catch((err) => {
+                                    console.log(err);
+                                })
+                            }).catch((err) => {
+                                console.log(err);
+                            })
+                    }
+                }).catch((err) => {
+                    console.log(err);
+                })
         }
     }
+    
+
     useEffect(() => {
         getSingleProductRecord();
     }, []);
+
     return (
         <>
             <div className='container' style={{ fontFamily: 'Rubik' }}>
@@ -48,12 +83,12 @@ const ProductDetails = () => {
 
                                     <h3 className="card-title pb-3 pt-3" style={{ color: 'DeepSkyBlue' }}>Price :- {product.price}</h3>
 
-                                    <p className="card-text pb-2">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <h2 className="card-text pb-2">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h2>
 
                                     <div class="product__modal-des ">
                                         <ul className="p-3 productdetail-content">
                                             <div>
-                                                <li><navlink><i className="fas fa-circle p-2" /> Bass and Stereo Sound.</navlink>
+                                                <li><navlink><i className="fas fa-circle p-2 " /> Bass and Stereo Sound.</navlink>
                                                 </li>
                                                 <li><navlink><i className="fas fa-circle p-2" /> Display with 3088 x 1440
                                                     pixels resolution.</navlink></li>
@@ -90,9 +125,9 @@ const ProductDetails = () => {
                                                     <div className="cart-plus-minus p-relative"><input type="number" defaultValue={1} /></div>
                                                 </div>
                                                 <div className="pro-cart-btn mb-25">
-                                                    <Link to={'/login'}>
-                                                        <button className="cart-btn" onClick={() => AddToCart()} type="button">Add to cart</button>
-                                                    </Link>
+                                                   
+                                                        <button className="cart-btn" onClick={() => AddToCart(product.id)} type="button">Add to cart</button>
+                                                    
                                                 </div>
                                             </div>
                                         </form>

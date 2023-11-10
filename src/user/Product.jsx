@@ -1,14 +1,49 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Banner from "./Banner";
 
 
 const Product = () => {
     const [product, setProduct] = useState([]);
-    const [category, setCategory] = useState([]);
+    const [category, setCategory] = useState([]);//categeory
+    const [marketStatus, setMarketStatus] = useState("");//market status
+    const [sortData, setSortData] = useState(""); //price
+    // const[currenrPage,setCurrentPage]=useState(1);
+    const [currentPage, setCurrentPage] = useState(1);
+    const recordsPerPage = 3;
+    const indexOfLastRecord = currentPage * recordsPerPage;
+    const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+  
+    const currentRecords = product.slice(indexOfFirstRecord, indexOfLastRecord);
+    const nPages = Math.ceil(product.length / recordsPerPage)
+    const pageNumbers = [...Array(nPages + 1).keys()].slice(1);
+  
+    const change = (id) => {
+      setCurrentPage(id);
+    }
+  
+    pageNumbers.map((pageNumber) => {
+      return (
+        <button
+          key={pageNumber}
+          onClick={() => change(pageNumber)}
+          className="btn btn-outline-primary"
+        >
+          {pageNumber}
+        </button>
+      );
+    });
+    // const recordperpage=5;
+    // const lastIndex=currenrPage * recordperpage;
+    // const firstIndex=lastIndex - recordperpage;
+    // const records=data.slice(firstIndex,lastIndex);
+    // const npages=Math.ceil(data.length/recordperpage);
+    // const numbers=[...Array(npages+1).keys()].slice(1);
+
 
     const allProduct = () => {
-        axios.get(`http://localhost:8000/products`)
+        axios.get(`http://localhost:8000/products?marketStatus=instock`)
             .then((res) => {
                 setProduct(res.data)
             }).catch((err) => {
@@ -31,7 +66,7 @@ const Product = () => {
         if (category === 'all') {
             allProduct();
         } else {
-            axios.get(`http://localhost:8000/products?category=${category}`)
+            axios.get(`http://localhost:8000/products?category=${category}&marketStatus=instock`)
                 .then((res) => {
                     setProduct(res.data);
                 })
@@ -41,7 +76,33 @@ const Product = () => {
         }
     }
 
+    const handleSort = async (Sort) => {
+        setSortData(Sort);
+        if ("Low to High" === Sort) {
+          let sort = await axios.get('http://localhost:8000/products?_sort=price');
+          setProduct(sort.data)
+        } else if ("High to Low" === Sort) {
+          let sort = await axios.get('http://localhost:8000/products?_sort=price&_order=desc');
+          setProduct(sort.data)
+        } else if ("Reset" === Sort) {
+          let sort = await axios.get('http://localhost:8000/products');
+          setProduct(sort.data)
+        }
+      }
 
+    const SearchData = async (e) => {
+        let data = await axios.get(`http://localhost:8000/products?q=${e}`);
+        setProduct(data.data);
+    }
+useEffect(()=>{
+    fetch(`http://localhost:8000/products?status=${marketStatus}&marketStatus=instock`)
+    .then(res=>res.json())
+    .then(data=>setProduct(data))
+    .catch((err)=>{
+        console.log(err);
+        return false;
+    });
+},[marketStatus])
     useEffect(() => {
         allProduct()
         allCategory()
@@ -55,8 +116,22 @@ const Product = () => {
                             <div className="section__title">
                                 <h5 className="st-titile">Top Selling Products</h5>
                             </div>
+                            <input type="text" class="input-inset" placeholder="search" onChange={(e) => SearchData(e.target.value)} id="search" />
                             <div className="product__nav-tab">
                                 <ul className="nav nav-tabs" id="flast-sell-tab" role="tablist">
+                                <div className='d-flex justify-content-end'>
+                <button className="  btn btn-outline-primary me-5 ps-4 pe-4" onClick={() => handleSort("Low to High")}>Low to High </button>
+              <button className="  btn btn-outline-primary me-5 ps-4 pe-4" onClick={() => handleSort("High to Low")}>High to low</button>
+              <button className=" btn btn-outline-primary me-5 ps-4 pe-4" onClick={() => handleSort("Reset")}>Reset</button>
+                </div>
+                                    {/* <select onChange={(e) => setMarketStatus(e.target.value)} >
+                                        <option>--- select status----</option>
+                                        <option value="best">Best</option>
+                                        <option value="upcomming">Upcomming</option>
+                                        <option value="trending">Trending</option>
+                                        <option value="latest">latest</option>
+                                    </select> */}
+
                                     {/* <li className="nav-item" role="presentation">
                                         <button className="nav-link active" id="computer-tab" data-bs-toggle="tab" data-bs-target="#computer" type="button" role="tab" aria-controls="computer" aria-selected="false">Mobile</button>
                                     </li>
@@ -85,6 +160,7 @@ const Product = () => {
                                             )
                                         })
                                     }
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -101,7 +177,7 @@ const Product = () => {
                                         <img style={{ height: '200px', width: '25rem', objectFit: 'contain' }} src={val.image} className="card-img-top" alt="..." />
                                         <div className="card-body">
                                             <br />
-                                            <h3 style={{ color: 'DodgerBlue' }}>{val.content}</h3>
+                                            <h3 className="font" style={{ color: 'DodgerBlue' }}>{val.content}</h3>
                                             <div className="rating">
                                                 <ul>
                                                     <li><a href="#"><i className="fal fa-star" /></a></li>
@@ -117,7 +193,7 @@ const Product = () => {
                                                 <div className="progress-bar bg-danger" role="progressbar" style={{ width: '20%' }} aria-valuenow={100} aria-valuemin={0} aria-valuemax={100} />
                                             </div>
                                             <h4 className="card-title" style={{ color: 'Gray' }}>Sold: {val.sold}</h4>
-                                            <br/>
+                                            <br />
                                             <Link to={`/product_details/${val.id}`}>
                                                 <button className="cart-btn">View More</button>
                                             </Link>
@@ -133,8 +209,26 @@ const Product = () => {
                             )
                         })
                     }
+                    <div className="pagination">
+              <ul className="pagination">
+                {pageNumbers.map((pageNumber) => {
+                  return (
+                    <li key={pageNumber} className="page-item">
+                      <button
+                        onClick={() => change(pageNumber)}
+                        className="page-link"
+                      >
+                        {pageNumber}
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
                 </div>
             </div>
+
+
         </>
     )
 }

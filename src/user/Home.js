@@ -3,6 +3,9 @@ import Slider from "./Slider";
 import axios from "axios";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import Banner from "./Banner";
+import Feature from "./Feature";
+
 
 const Home = () => {
     const [product, setProduct] = useState([]);
@@ -10,6 +13,7 @@ const Home = () => {
     const [mobile, setMobile] = useState([]);
     const [headphone, setHeadphone] = useState([]);
     const [laptop, setLaptop] = useState([]);
+    const [smartwatch,setSmartWatch]=useState([]);
 
     const getAllProduct = async () => {
         axios.get(` http://localhost:8000/products`)
@@ -69,6 +73,17 @@ const Home = () => {
             })
     }
 
+    // smartwatch
+    const getAllSmartWatch = () => {
+        axios.get(`http://localhost:8000/products?category=smartwatch&status=instock`)
+            .then((res) => {
+                setSmartWatch(res.data.slice(0, 4)); // Corrected to setLaptop
+            }).catch((err) => {
+                console.log(err);
+                return false;
+            })
+    }
+
 
     useEffect(() => {
         getAllProduct();
@@ -76,6 +91,7 @@ const Home = () => {
         getAllIpad();
         getAllHeadphone();
         getAllLaptop();
+        getAllSmartWatch();
     }, [])
     return (
         <>
@@ -115,7 +131,7 @@ const Home = () => {
                                         <img style={{ height: '200px', width: '25rem', objectFit: 'contain' }} src={val.image} className="card-img-top" alt="..." />
                                         <div className="card-body">
                                             <br />
-                                            <h3 style={{ color: 'DodgerBlue' }}>{val.content}</h3>
+                                            <h1 style={{ color: 'DodgerBlue' }}>{val.content}</h1>
                                             <div className="rating">
                                                 <ul>
                                                     <li><a href="#"><i className="fal fa-star" /></a></li>
@@ -151,7 +167,7 @@ const Home = () => {
                                         <img style={{ height: '200px', width: '25rem', objectFit: 'contain' }} src={val.image} className="card-img-top" alt="..." />
                                         <div className="card-body">
                                             <br />
-                                            <h3 style={{ color: 'DodgerBlue' }}>{val.content}</h3>
+                                            <h1 style={{ color: 'DodgerBlue' }}>{val.content}</h1>
                                             <div className="rating">
                                                 <ul>
                                                     <li><a href="#"><i className="fal fa-star" /></a></li>
@@ -186,7 +202,7 @@ const Home = () => {
                                         <img style={{ height: '200px', width: '25rem', objectFit: 'contain' }} src={val.image} className="card-img-top" alt="..." />
                                         <div className="card-body">
                                             <br />
-                                            <h3 style={{ color: 'DodgerBlue' }}>{val.content}</h3>
+                                            <h1 style={{ color: 'DodgerBlue' }}>{val.content}</h1>
                                             <div className="rating">
                                                 <ul>
                                                     <li><a href="#"><i className="fal fa-star" /></a></li>
@@ -224,7 +240,7 @@ const Home = () => {
                                         <img style={{ height: '200px', width: '25rem', objectFit: 'contain' }} src={val.image} className="card-img-top" alt="..." />
                                         <div className="card-body">
                                             <br />
-                                            <h3 style={{ color: 'DodgerBlue' }}>{val.content}</h3>
+                                            <h1 style={{ color: 'DodgerBlue' }}>{val.content}</h1>
                                             <div className="rating">
                                                 <ul>
                                                     <li><a href="#"><i className="fal fa-star" /></a></li>
@@ -235,7 +251,43 @@ const Home = () => {
                                                 </ul>
                                                 <span>(01 review)</span>
                                             </div>
-                                            <h4 className="card-title pt-2 pb-2"> {val.price}</h4>
+                                            <h1 className="card-title pt-2 pb-2"> {val.price}</h1>
+                                            <div className="progress mb-3">
+                                                <div className="progress-bar bg-danger" role="progressbar" style={{ width: '20%' }} aria-valuenow={100} aria-valuemin={0} aria-valuemax={100} />
+                                            </div>
+                                            <h4 className="card-title" style={{ color: 'Gray' }}>Sold: {val.sold}</h4>
+                                            <Link to={`/product`}>
+                                                <button className="cart-btn">Add To Cart</button>
+                                            </Link>
+                                            {/* <h5 className="card-title">Price :- {val.price}</h5> */}
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                    {/* smartwatch */}
+
+                    {
+                        smartwatch.map((val) => {
+                            return (
+                                <div className="col-md-3 pb-4">
+                                    <div className="card" style={{ width: '25rem', border: 'none', padding: '15px' }}>
+                                        <img style={{ height: '200px', width: '25rem', objectFit: 'contain' }} src={val.image} className="card-img-top" alt="..." />
+                                        <div className="card-body">
+                                            <br />
+                                            <h1 style={{ color: 'DodgerBlue' }}>{val.content}</h1>
+                                            <div className="rating">
+                                                <ul>
+                                                    <li><a href="#"><i className="fal fa-star" /></a></li>
+                                                    <li><a href="#"><i className="fal fa-star" /></a></li>
+                                                    <li><a href="#"><i className="fal fa-star" /></a></li>
+                                                    <li><a href="#"><i className="fal fa-star" /></a></li>
+                                                    <li><a href="#"><i className="fal fa-star" /></a></li>
+                                                </ul>
+                                                <span>(01 review)</span>
+                                            </div>
+                                            <h1 className="card-title pt-2 pb-2"> {val.price}</h1>
                                             <div className="progress mb-3">
                                                 <div className="progress-bar bg-danger" role="progressbar" style={{ width: '20%' }} aria-valuenow={100} aria-valuemin={0} aria-valuemax={100} />
                                             </div>
@@ -252,6 +304,8 @@ const Home = () => {
                     }
                 </div>
             </div>
+            <Banner/>
+           <Feature/>
         </>
     )
 }

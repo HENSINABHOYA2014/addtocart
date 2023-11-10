@@ -34,6 +34,19 @@
 /*----------------------------------------*/
 /*  01. THEME DEFAULT CSS START
 /*----------------------------------------*/
+/* add product form css */
+
+div.bg-white.rounded.shadow-lg.p-4.px-4.md:p-8.mb-6{
+  width: 500px;
+  height: 500px;
+}
+label{
+  font-size: 20px
+}
+.h-10 .border .mt-1 .rounded .px-4 .w-full .bg-gray-50{
+  width: 100px;
+  height: 50px
+}
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&amp;display=swap");
 * {
   margin: 0;
@@ -43,6 +56,12 @@
 .text-decoration{
   text-decoration: none;
   color: white;
+}
+h3.font{
+  font-size: 17px;
+}
+a.active{
+  text-decoration: none;
 }
 .productdetail-content{
   size: 26px;
@@ -2625,7 +2644,7 @@ input {
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .features__item {
-    padding: 40px 20px;
+    padding: 40px 20px!important;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -3337,7 +3356,8 @@ input {
   border: none;
 }
 .product__nav-tab .nav-item {
-  margin-right: 35px;
+  /* margin-right: 35px; */
+  margin: 5px;
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .product__nav-tab .nav-item {

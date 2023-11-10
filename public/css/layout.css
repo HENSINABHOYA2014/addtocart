@@ -1,0 +1,21 @@
+.sidebar-link, a.sidebar-link{
+    font-size: 14px;
+    padding: 12px;
+}
+h1.h3{
+    font-size: 21px;
+    padding: 10px;
+}
+.card-title{
+    font-size: 18px;
+   
+}
+h1.mt-1.mb-3{
+    font-size: 28px;
+    padding: 15px;
+}
+div.mb-0{
+    font-size: 14px;
+    padding: 0 0 12px 0;
+}
+

@@ -26,8 +26,93 @@
      <link rel="stylesheet" href="/src/assets/css/font-awesome-pro.css">
      <link rel="stylesheet" href="/src/assets/css/default.css">
      <link rel="stylesheet" href="/src/assets/css/style.css">
- 
-     
+ <!-- admin panel -->
+ <!-- <script src="js/app.js"></script> -->
+ <!-- nice adminpanel start -->
+  <!-- Favicons -->
+  <link href="/assets-nice/img/favicon.png" rel="icon">
+  <link href="/assets-nice/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/src/assets-nice/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/src/assets-nice/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/src/assets-nice/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/src/assets-nice/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="/src/assets-nice/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="/src/assets-nice/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/src/assets-nice/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="/src/assets-nice/css/style.css" rel="stylesheet">
+
+    <!-- Vendor JS Files -->
+    <script src="/src/assets-nice/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="/src/assets-nice/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/src/assets-nice/vendor/chart.js/chart.umd.js"></script>
+    <script src="/src/assets-nice/vendor/echarts/echarts.min.js"></script>
+    <script src="/src/assets-nice/vendor/quill/quill.min.js"></script>
+    <script src="/src/assets-nice/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="/src/assets-nice/vendor/tinymce/tinymce.min.js"></script>
+    <script src="/src/assets-nice/vendor/php-email-form/validate.js"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="/src/assets-nice/js/main.js"></script>
+<!-- css extra -->
+<link rel="stylesheet" href="css/addproductform.css">
+<link rel="stylesheet" href="/public/src/css/addproductform.css">
+<link rel="stylesheet" href="/public/src/css/app.css">
+<link rel="stylesheet" href="/public/src/css/layout.css">
+<link rel="stylesheet" href="/public/src/css/viewuser.css">
+<link rel="stylesheet" href="/public/src/css/addtocart.css">
+ <!-- nice adminpanel end -->
+
+<script>
+  // Check if the required elements are present before executing the code
+document.addEventListener("DOMContentLoaded", function () {
+    const lineChartElement = document.getElementById("chartjs-dashboard-line");
+    const pieChartElement = document.getElementById("chartjs-dashboard-pie");
+    const barChartElement = document.getElementById("chartjs-dashboard-bar");
+    const worldMapElement = document.getElementById("world_map");
+    const datePickerElement = document.getElementById("datetimepicker-dashboard");
+
+    if (lineChartElement) {
+        // Line Chart
+        const ctx = lineChartElement.getContext("2d");
+        if (ctx) {
+            // Rest of the line chart configuration using Chart.js
+        }
+    }
+
+    if (pieChartElement) {
+        // Pie Chart
+        // Check if required, then set up the pie chart using Chart.js
+    }
+
+    if (barChartElement) {
+        // Bar Chart
+        // Check if required, then set up the bar chart using Chart.js
+    }
+
+    if (worldMapElement) {
+        // jsVectorMap setup
+        // Check if required, then initialize the map using jsVectorMap
+    }
+
+    if (datePickerElement) {
+        // Flatpickr setup for date picker
+        // Check if required, then initialize the date picker using flatpickr
+    }
+});
+
+</script>
+   <link href="css/app.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+
+	<link rel="canonical" href="https://demo-basic.adminkit.io/" />
     
     <!--
       manifest.json provides metadata used when your web app is installed on a
