@@ -17,18 +17,18 @@ const User = () => {
   return (
     <>
 
-      <div className="ps-5 col-lg-12 pt-2">
+  <main id='main' className='main'>
+  <div className=" col-lg-12 ">
         <div style={{ boxShadow: '3px 3px 5px 6px #ccc' }} className="mt-3 p-5">
           <h3 className="text-center">View Users</h3>
-
           <table className="table table-hover">
             <thead>
               <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Name</th>
+                <th className='h2' scope="col">Id</th>
+                <th className='h2' scope="col">Name</th>
                 {/* <th scope="col">Email</th> */}
-                <th scope="col">Password</th>
-                <th scope="col">Action</th>
+                <th className='h2' scope="col">Password</th>
+                <th className='h2' scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -36,13 +36,13 @@ const User = () => {
                 users.map((val) => {
                   return (
                     <tr>
-                      <td>{val.id}</td>
-                      <td>{val.username}</td>
+                      <td className='h3'>{val.id}</td>
+                      <td className='h3'>{val.username}</td>
                       {/* <td>{val.email}</td> */}
-                      <td>{val.password}</td>
+                      <td className='h3'>{val.password}</td>
                       <td>
                         <Link to={`/admin/userdetail/${val.id}`}>
-                          <button className='btn btn-primary btn-sm'>View</button>
+                          <button className='btn btn-primary btn-sm p-2' >View</button>
                         </Link>
                       </td>
                     </tr>
@@ -53,6 +53,9 @@ const User = () => {
           </table>
         </div>
       </div>
+  </main>
+
+      
     </>
   )
 }

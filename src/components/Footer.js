@@ -12,12 +12,12 @@ const Footer = () => {
           <p>We make consolidating, marketing and tracking your social media website easy.</p>
           <div className="cta-social">
             <div className="social-icon">
-              <NavLink className="facebook"><i className="fab fa-facebook-f" /></NavLink>
-              <NavLink className="twitter"><i className="fab fa-twitter" /></NavLink>
-              <NavLink className="youtube"><i className="fab fa-youtube" /></NavLink>
-              <NavLink className="linkedin"><i className="fab fa-linkedin-in" /></NavLink>
-              <NavLink className="rss"><i className="fas fa-rss" /></NavLink>
-              <NavLink className="dribbble"><i className="fab fa-dribbble" /></NavLink>
+              <NavLink className="facebook text-white"><i className="fab fa-facebook-f" /></NavLink>
+              <NavLink className="twitter text-white"><i className="fab fa-twitter" /></NavLink>
+              <NavLink className="youtube text-white"><i className="fab fa-youtube" /></NavLink>
+              <NavLink className="linkedin text-white"><i className="fab fa-linkedin-in" /></NavLink>
+              <NavLink className="rss text-white"><i className="fas fa-rss" /></NavLink>
+              <NavLink className="dribbble text-white"><i className="fab fa-dribbble" /></NavLink>
             </div>
           </div>
         </div>
@@ -67,12 +67,12 @@ const Footer = () => {
                                                 <div className="footer__widget-content">
                                                     <div className="footer__link">
                                                         <ul>
-                                                            <li><NavLink>New Customers</NavLink></li>
-                                                            <li><NavLink>How to use Account</NavLink></li>
-                                                            <li><NavLink>Placing an Order</NavLink></li>
-                                                            <li><NavLink>Payment Methods</NavLink></li>
-                                                            <li><NavLink>Delivery &amp; Dispatch</NavLink></li>
-                                                            <li><NavLink>Problems with Order</NavLink></li>
+                                                            <li className="text-gray-color h5">New Customers</li>
+                                                            <li className="text-gray-color h5 pt-1">How to use Account</li>
+                                                            <li className="text-gray-color h5 pt-1">Placing an Order</li>
+                                                            <li className="text-gray-color h5 pt-1">Payment Methods</li>
+                                                            <li className="text-gray-color h5 pt-1">Delivery &amp; Dispatch</li>
+                                                            <li className="text-gray-color h5 pt-1">Problems with Order</li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -86,11 +86,11 @@ const Footer = () => {
                                                 <div className="footer__widget-content">
                                                     <div className="footer__link">
                                                         <ul>
-                                                            <li><NavLink>Help Center</NavLink></li>
-                                                            <li><NavLink>Contact Us</NavLink></li>
-                                                            <li><NavLink>Report Abuse</NavLink></li>
-                                                            <li><NavLink>Submit a Dispute</NavLink></li>
-                                                            <li><NavLink>Policies &amp; Rules</NavLink></li>
+                                                            <li className="text-gray-color h5 pt-1">Contact Us</li>
+                                                            <li className="text-gray-color h5 pt-1">Report Abuse</li>
+                                                            <li className="text-gray-color h5 pt-1">Submit a Dispute</li>
+                                                            <li className="text-gray-color h5 pt-1">Policies &amp; Rules</li>
+                                                            <li className="text-gray-color h5 pt-1">Help Center</li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -111,13 +111,13 @@ const Footer = () => {
                                                             <div className="footer__widget-content">
                                                                 <div className="footer__link">
                                                                     <ul>
-                                                                        <li><NavLink>Product Support</NavLink></li>
-                                                                        <li><NavLink href="checkout.html">Checkout</NavLink></li>
-                                                                        <li><NavLink href="cart.html">Shopping Cart</NavLink></li>
-                                                                        <li><NavLink href="wishlist.html">Wishlist</NavLink></li>
-                                                                        <li><NavLink>Terms &amp; Conditions &amp;</NavLink>
+                                                                        <li className="text-gray-color h5 pt-1">Product Support</li>
+                                                                        <li className="text-gray-color h5 pt-1">Checkout</li>
+                                                                        <li className="text-gray-color h5 pt-1">Shopping Cart</li>
+                                                                        <li className="text-gray-color h5 pt-1">Wishlist</li>
+                                                                        <li className="text-gray-color h5 pt-1">Terms &amp; Conditions &amp;
                                                                         </li>
-                                                                        <li><NavLink>Redeem Voucher</NavLink></li>
+                                                                        <li className="text-gray-color h5 pt-1">Redeem Voucher</li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -131,10 +131,10 @@ const Footer = () => {
                                                             <div className="footer__widget-content">
                                                                 <div className="footer__link">
                                                                     <ul>
-                                                                        <li><NavLink href="contact.html">Store Location</NavLink></li>
-                                                                        <li><NavLink href="my-account.html">My account</NavLink></li>
-                                                                        <li><NavLink href="contact.html">Order Tracking</NavLink></li>
-                                                                        <li><NavLink>FAQs</NavLink></li>
+                                                                        <li className="text-gray-color h5 pt-1">Store Location</li>
+                                                                        <li className="text-gray-color h5 pt-1">My account</li>
+                                                                        <li className="text-gray-color h5 pt-1">Order Tracking</li>
+                                                                        <li className="text-gray-color h5 pt-1">FAQs</li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -157,15 +157,15 @@ const Footer = () => {
                                                             </div>
                                                             <div className="text">
                                                                 <h4>Got Question? Call us 24/7!</h4>
-                                                                <span><NavLink href="tel:100-123-456-7890">(+100) 123 456
-                                                                    7890</NavLink></span>
+                                                                <span>(+100) 123 456
+                                                                    7890</span>
                                                             </div>
                                                         </div>
                                                         <div className="footer__info">
                                                             <ul>
                                                                 <li>
-                                                                    <span>Add: <NavLink target="_blank" href="https://goo.gl/maps/c82DDZ8ALvL878Bv8">Walls
-                                                                        Street 68, Mahattan, New York, USA</NavLink></span>
+                                                                    <span>Add: Walls
+                                                                        Street 68, Mahattan, New York, USA</span>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -183,29 +183,7 @@ const Footer = () => {
                             <div className="footer__bottom-content pt-55 pb-45">
                                 <div className="row">
                                     <div className="col-xl-12">
-                                        <div className="footer__links text-center mb-25">
-                                            <p>
-                                                <NavLink>Online Shopping</NavLink>
-                                                <NavLink>Promotions</NavLink>
-                                                <NavLink>My Orders</NavLink>
-                                                <NavLink>Help</NavLink>
-                                                <NavLink>Customer Service</NavLink>
-                                                <NavLink>Support</NavLink>
-                                                <NavLink>Most Populars</NavLink>
-                                                <NavLink>New Arrivals</NavLink>
-                                                <NavLink>Special Products </NavLink>
-                                                <NavLink>Manufacturers</NavLink>
-                                                <br />
-                                                <NavLink>Garden Equipments</NavLink>
-                                                <NavLink>Powers And Hand Tools </NavLink>
-                                                <NavLink>Utensil &amp; Gadget </NavLink>
-                                                <NavLink>Printers</NavLink>
-                                                <NavLink>Projectors</NavLink>
-                                                <NavLink>Scanners</NavLink>
-                                                <NavLink>Store</NavLink>
-                                                <NavLink>Business</NavLink>
-                                            </p>
-                                        </div>
+                                        
                                         <div className="payment-image text-center mb-25">
                                             <NavLink href="contact.html"><img src="https://wphix.com/template/dukamarket/dukamarket/assets/img/payment/payment.png" alt /></NavLink>
                                         </div>

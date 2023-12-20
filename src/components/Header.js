@@ -14,7 +14,32 @@ const Header = () => {
     <>
       <div>
         {/* header-start */}
-        <header className="header d-blue-bg myCustomClass" style={{ fontFamily: 'Rubik' }}>
+       <nav className="navbar navbar-expand-lg navbar-white header-bg-color">
+  <div className="container">
+    <NavLink className="navbar-brand" href="#"><img src="https://wphix.com/template/dukamarket/dukamarket/assets/img/logo/logo1.svg" alt="logo" width={230} /></NavLink>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon" />
+    </button>
+    <div className="collapse navbar-collapse justify-content-end " id="navbarNav">
+      <ul className="navbar-nav p-3">
+        <li className="nav-item h2">
+          <NavLink className="nav-link ps-2 text-white" aria-current="page" to={'/product'}>Product</NavLink>
+        </li>
+        <li className="nav-item h2 ps-3 ">
+          <NavLink className="nav-link text-white" to={'/product_details/:productId'}>ProductDetails</NavLink>
+        </li>
+        <li className="nav-item h2 ps-3">
+          <NavLink className="nav-link text-white" to={'/cart'}>Cart</NavLink>
+        </li>
+        <li className="nav-item h2 ps-3">
+          <NavLink className="nav-link  text-white" to={'/userprofile'}>Profile</NavLink>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+        {/* <header className="header d-blue-bg myCustomClass" style={{ fontFamily: 'Rubik' }}>
           <div className="header-top">
             <div className="container">
               <div className="header-inner">
@@ -53,8 +78,8 @@ const Header = () => {
                     <div className="header-inner-end text-md-end">
                       <div className="ovic-menu-wrapper">
                         <ul>
-                        <li><NavLink to={'/home'}>Product</NavLink></li>
-                        <li><NavLink to={'/product'}>ProductDetails</NavLink></li>
+                        <li><NavLink to={'/product'}>Product</NavLink></li>
+                        <li><NavLink to={'/product_details/:productId'}>ProductDetails</NavLink></li>
                         <li><NavLink to={'/cart'}>Cart</NavLink></li>
                         <li><NavLink to={'/userprofile'}>Profile</NavLink></li>
 
@@ -108,30 +133,30 @@ const Header = () => {
                  <div className="col-xl-4 col-lg-5 col-md-8 col-sm-8">
   <div className="header-action">
     <div className="block-userlink">
-      <a className="icon-link">
+      <NavLink className="icon-link">
         <i className="flaticon-user" />
         <span className="text">
           <span className="sub">Login </span>
           My Account </span>
-      </a>
+      </NavLink>
     </div>
     <div className="block-wishlist action">
-      <a className="icon-link" href="wishlist.html">
+      <NavLink className="icon-link" href="wishlist.html">
         <i className="flaticon-heart" />
         <span className="count">0</span>
         <span className="text">
           <span className="sub">Favorite</span>
           My Wishlist </span>
-      </a>
+      </NavLink>
     </div>
     <div className="block-cart action">
-      <a className="icon-link" href="cart.html">
+      <NavLink className="icon-link" href="cart.html">
         <i className="flaticon-shopping-bag" />
         <span className="count">1</span>
         <span className="text">
           <span className="sub">Your Cart:</span>
           $00.00 </span>
-      </a>
+      </NavLink>
       <div className="cart">
         <div className="cart__mini">
           <ul>
@@ -145,20 +170,20 @@ const Header = () => {
               <div className="cart__item d-flex justify-content-between align-items-center">
                 <div className="cart__inner d-flex">
                   <div className="cart__thumb">
-                    <a href="product-details.html">
+                    <NavLink href="product-details.html">
                       <img src="assets/img/cart/20.jpg" alt />
-                    </a>
+                    </NavLink>
                   </div>
                   <div className="cart__details">
-                    <h6><a href="product-details.html"> Samsung C49J89:
-                        £875, Debenhams Plus </a></h6>
+                    <h6><NavLink href="product-details.html"> Samsung C49J89:
+                        £875, Debenhams Plus </NavLink></h6>
                     <div className="cart__price">
                       <span>$255.00</span>
                     </div>
                   </div>
                 </div>
                 <div className="cart__del">
-                  <a href="#"><i className="fal fa-times" /></a>
+                  <NavLink href="#"><i className="fal fa-times" /></NavLink>
                 </div>
               </div>
             </li>
@@ -169,8 +194,8 @@ const Header = () => {
               </div>
             </li>
             <li>
-              <a href="cart.html" className="wc-cart mb-10">View cart</a>
-              <a href="checkout.html" className="wc-checkout">Checkout</a>
+              <NavLink href="cart.html" className="wc-cart mb-10">View cart</NavLink>
+              <NavLink href="checkout.html" className="wc-checkout">Checkout</NavLink>
             </li>
           </ul>
         </div>
@@ -527,7 +552,7 @@ const Header = () => {
               </div>
             </div>
           </div>
-        </header>
+        </header> */}
         {/* header-end */}
 
       </div>

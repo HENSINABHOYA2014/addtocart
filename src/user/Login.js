@@ -28,7 +28,7 @@ const Login = () => {
       setUserName("");
       setPassword("");
       setErrorMessage("");
-      navigate('/home');
+      navigate('/');
     } catch (error) {
       if (error.response) {
         // The request was made and the server responded with a status code that falls out of the range of 2xx
@@ -72,12 +72,12 @@ const Login = () => {
           placeholder="Password"
           onChange={handlePasswordChange}
         />
-        <button type="submit">Log In</button>
+        <button type="submit" >Log In</button>
 
         {errorMessage && <p className="error-message">{errorMessage}</p>}
 
         <div className="links h5">
-          <NavLink to="/">Forgot password</NavLink>
+          <NavLink to="/userforgetpassword">Forgot password</NavLink>
           <NavLink to="/">Register</NavLink>
         </div>
       </form>

@@ -1,4 +1,5 @@
 import React from 'react'; 
+import './App.css';
 import '../src/assets/css/loginpage.css';
 import 'typeface-rubik';
 import '../src/assets/css/style.css';
@@ -16,9 +17,10 @@ import '../src/assets/css/owl-carousel.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // admin panel
 
-import '../src/assets-nice/css/style.css';
+import '../src/demo/css/style.css';
 
-// import '../src/css/app.css'
+
+// import '../src/app/app.css'
 import '../src/css/layout.css'
 // admin panel end css
 
@@ -48,6 +50,9 @@ import UserDetails from './admin/pages/UserDetails';
 import UserProfile from './user/UserProfile';
 import UserRegister from './user/UserRegister';
 import UserLogin from './user/UserLogin';
+import UserForgetPassword from './user/ForgetPassword';
+import UserOtp from './user/UserOtp';
+import UserNewPassword from './user/UserNewPassword';
 
 
 function App() {
@@ -55,23 +60,27 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* user route */}
-        <Route path='/' element={<Layout />}>
-          <Route path="/home" element={<Home />} />
+        <Route  element={<Layout />}>
+          <Route path='/' element={<Home />} />
           <Route path="/product" element={<Product />} />
           <Route path="/product_details/:productId" element={<ProductDetails />} />
           <Route path='/userregister' element={<UserRegister/>}></Route>
           <Route path='/userLogin' element={<UserLogin/>}></Route>
+          <Route path='/userforgetpassword' element={<UserForgetPassword/>}></Route>
+          <Route path='/userotp' element={<UserOtp/>}></Route>
+          <Route path='/usernewpassword' element={<UserNewPassword/>}></Route>
           <Route path='/cart' element={<Cart/>}></Route>
           <Route path='/login' element={<Login />}></Route>
           <Route path='/userprofile' element={<UserProfile/>}></Route>
         </Route>
         {/* admin route */}
-        <Route path='/admin' element={<AdminsideLayout />}>
-          <Route path="/admin/adminregister" element={<AdminRegister />} />
-          <Route path='/admin/adminLogic' element={<AdminLogic/>}></Route>
+        <Route path='/admin/adminLogic' element={<AdminLogic/>}></Route>
           <Route path='/admin/adminforgetpassword' element={<AdminForgetPassword/>}></Route>
           <Route path='/admin/adminotp' element={<AdminOtp/>}></Route>
           <Route path='/admin/adminnewpassword' element={<AdminNewPassword/>}></Route>
+
+        <Route path='/admin' element={<AdminsideLayout />}>
+          <Route path="/admin/adminregister" element={<AdminRegister />} />
           <Route path='/admin/admindashboard' element={<AdminDashboard />}></Route>
           <Route path='/admin/userdetail/:userid' element={<UserDetails/>}></Route>
           <Route path="/admin/adminproduct" element={<AdminProduct />} />

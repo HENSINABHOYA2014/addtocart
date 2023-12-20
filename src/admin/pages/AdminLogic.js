@@ -35,7 +35,7 @@ const AdminLogic = () => {
             localStorage.setItem('UserLogin',JSON.stringify(user.data[0]));
             setUserName("");
             setPassword("");
-            // navigate('/');
+            navigate('/admin');
         }catch(err){
             console.log(err);
             return false;
@@ -85,7 +85,7 @@ const AdminLogic = () => {
                     <button className="btn btn-primary w-100" type="button" onClick= {()=>handleSubmit()} defaultValue="Submit" >Login</button>
                   </div>
                   <div className="col-12">
-                    <p className="small mb-0">Don't have account? <a href="pages-register.html">Create an account</a></p>
+                    <p className="small mb-0">Don't have account? <a href="pages-register.html"><NavLink to={'/admin/adminforgetpassword'}>Forgeat Password</NavLink></a></p>
                   </div>
                 </form>
               </div>

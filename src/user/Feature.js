@@ -3,38 +3,7 @@ import { NavLink } from 'react-router-dom'
 const Feature = () => {
   return (
     <>
-    {/* banner__area-start */}
-    {/* <section className="banner__area banner__area-d pb-10 ">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-6 col-lg-6 col-md-12">
-              <div className="banner__item p-relative w-img mb-30">
-                <div className="banner__img">
-                  <NavLink ><img src="https://wphix.com/template/dukamarket/dukamarket/assets/img/banner/banner-4.jpg" alt /></NavLink>
-                </div>
-                <div className="banner__content">
-                  <span>Bestseller Products</span>
-                  <h6><NavLink style={{color:'white'}}>PC &amp; Docking Station</NavLink></h6>
-                  <p>Discount 20% Off, Top Quality Products</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-6 col-lg-6 col-md-12">
-              <div className="banner__item p-relative mb-30 w-img">
-                <div className="banner__img">
-                  <NavLink><img src="https://wphix.com/template/dukamarket/dukamarket/assets/img/banner/banner-5.jpg" alt /></NavLink>
-                </div>
-                <div className="banner__content">
-                  <span>Featured Products</span>
-                  <h6><NavLink style={{color:'white'}}>Accessories iPhone</NavLink></h6>
-                  <p>Free Shipping All Order Over $99</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-      {/* banner__area-end */}
+    
       {/* featured-start */}
       <section className="featured light-bg pt-55 pb-40 ">
         <div className="container">
@@ -107,7 +76,7 @@ const Feature = () => {
                         </ul>
                       </div>
                       <div className="cart-option">
-                        <NavLink className="cart-btn-2 w-100 mr-10">Add to Cart</NavLink>
+                        <NavLink className="cart-btn-2 w-100 mr-10 text-white">Add to Cart</NavLink>
                         <NavLink className="transperant-btn"><i className="fal fa-heart" /></NavLink>
                       </div>
                     </div>
@@ -279,7 +248,7 @@ const Feature = () => {
       {/* moveing-text-area-end */}
       {/* banner__area-start */}
       <section className="banner__area pt-60 pb-25">
-        <div className="container">
+        <div className="container">z
           <div className="row">
             <div className="col-xl-4 col-lg-6 col-md-12">
               <div className="banner__item p-relative w-img mb-30">
@@ -290,7 +259,7 @@ const Feature = () => {
                   <div className="banner-button mb-20">
                     <NavLink className="st-btn">HOT DEALS</NavLink>
                   </div>
-                  <h6><NavLink style={{color:'white'}}>Sale 30% Off <br /> Top Computer Case Gaming</NavLink></h6>
+                  <h6><NavLink className={"text-white"}>Sale 30% Off <br /> Top Computer Case Gaming</NavLink></h6>
                 </div>
               </div>
             </div>
@@ -302,7 +271,7 @@ const Feature = () => {
                       <NavLink><img src="https://wphix.com/template/dukamarket/dukamarket/assets/img/banner/banner-7.jpg" alt /></NavLink>
                     </div>
                     <div className="banner__content banner__content-sd text-center">
-                      <h6><NavLink style={{color:'white'}}>Electronic Deals</NavLink></h6>
+                      <h6><NavLink className={"text-white"}>Electronic Deals</NavLink></h6>
                       <p>Laptop, Computer, Smartphone, Gampad</p>
                       <div className="banner-button mt-20 d-none d-sm-block">
                         <NavLink className="st-btn-3 b-radius">Shop Deals</NavLink>
@@ -316,7 +285,7 @@ const Feature = () => {
                       <NavLink><img src="https://wphix.com/template/dukamarket/dukamarket/assets/img/banner/banner-8.jpg" alt /></NavLink>
                     </div>
                     <div className="banner__content">
-                      <h6><NavLink style={{color:'white'}}>Hot Products <br /> Laptop Ultra 4K 16”</NavLink>
+                      <h6><NavLink className={"text-white"}>Hot Products <br /> Laptop Ultra 4K 16”</NavLink>
                       </h6>
                       <p>Discount 20% On Products</p>
                     </div>
@@ -333,7 +302,7 @@ const Feature = () => {
                   <div className="banner-button mb-20">
                     <NavLink className="st-btn">HOT DEALS</NavLink>
                   </div>
-                  <h6><NavLink style={{color:'white'}}>Sport Edition <br /> Best Choice of The Year</NavLink></h6>
+                  <h6><NavLink className={"text-white"}>Sport Edition <br /> Best Choice of The Year</NavLink></h6>
                 </div>
               </div>
             </div>

@@ -1,21 +1,30 @@
 .sidebar-link, a.sidebar-link{
-    font-size: 14px;
-    padding: 12px;
+    font-size: 14px!important;
+    padding: 12px!important;
 }
 h1.h3{
-    font-size: 21px;
-    padding: 10px;
+    font-size: 21px!important;
+    padding: 10px!important;
 }
 .card-title{
-    font-size: 18px;
+    font-size: 18px!important;
    
 }
 h1.mt-1.mb-3{
-    font-size: 28px;
-    padding: 15px;
+    font-size: 28px!important;
+    padding: 15px!important;
 }
 div.mb-0{
-    font-size: 14px;
-    padding: 0 0 12px 0;
+    font-size: 14px!important;
+    padding: 0 0 12px 0!important;
+}
+.header-bg-color{
+    background-color: #263C97;
+}
+.text-color-white{
+    color: white;
+}
+.text-gray-color{
+    color: #999;
 }
 

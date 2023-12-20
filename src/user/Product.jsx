@@ -8,32 +8,32 @@ const Product = () => {
     const [product, setProduct] = useState([]);
     const [category, setCategory] = useState([]);//categeory
     const [marketStatus, setMarketStatus] = useState("");//market status
-    const [sortData, setSortData] = useState(""); //price
+    const [sortData, setSortData] = useState(""); //shorting
     // const[currenrPage,setCurrentPage]=useState(1);
-    const [currentPage, setCurrentPage] = useState(1);
-    const recordsPerPage = 3;
-    const indexOfLastRecord = currentPage * recordsPerPage;
-    const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+    // const [currentPage, setCurrentPage] = useState(1);
+    // const recordsPerPage = 3;
+    // const indexOfLastRecord = currentPage * recordsPerPage;
+    // const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   
-    const currentRecords = product.slice(indexOfFirstRecord, indexOfLastRecord);
-    const nPages = Math.ceil(product.length / recordsPerPage)
-    const pageNumbers = [...Array(nPages + 1).keys()].slice(1);
+    // const currentRecords = product.slice(indexOfFirstRecord, indexOfLastRecord);
+    // const nPages = Math.ceil(product.length / recordsPerPage)
+    // const pageNumbers = [...Array(nPages + 1).keys()].slice(1);
   
-    const change = (id) => {
-      setCurrentPage(id);
-    }
+    // const change = (id) => {
+    //     setCurrentPage(id);
+    //   }
   
-    pageNumbers.map((pageNumber) => {
-      return (
-        <button
-          key={pageNumber}
-          onClick={() => change(pageNumber)}
-          className="btn btn-outline-primary"
-        >
-          {pageNumber}
-        </button>
-      );
-    });
+    // pageNumbers.map((pageNumber) => {
+    //   return (
+    //     <button
+    //       key={pageNumber}
+    //       onClick={() => change(pageNumber)}
+    //       className="btn btn-outline-primary"
+    //     >
+    //       {pageNumber}
+    //     </button>
+    //   );
+    // });
     // const recordperpage=5;
     // const lastIndex=currenrPage * recordperpage;
     // const firstIndex=lastIndex - recordperpage;
@@ -71,11 +71,11 @@ const Product = () => {
                     setProduct(res.data);
                 })
                 .catch((err) => {
-                    console.log(err);
+                    
                 });
         }
     }
-
+// shorting(high to law)
     const handleSort = async (Sort) => {
         setSortData(Sort);
         if ("Low to High" === Sort) {
@@ -90,6 +90,21 @@ const Product = () => {
         }
       }
 
+  
+const onpagination = async (ans) => {
+      if (ans === "F") {
+        let pagination = await axios.get(`http://localhost:8000/products?_page=1&_limit=10`);
+        setProduct(pagination.data)
+      } else if (ans === "M") {
+        let pagination = await axios.get(`http://localhost:8000/products?_page=2&_limit=10`);
+        setProduct(pagination.data)
+      }
+      else if (ans === "L") {
+        let pagination = await axios.get(`http://localhost:8000/products?_page=3&_limit=10`);
+        setProduct(pagination.data)
+      }
+    }
+
     const SearchData = async (e) => {
         let data = await axios.get(`http://localhost:8000/products?q=${e}`);
         setProduct(data.data);
@@ -102,6 +117,7 @@ useEffect(()=>{
         console.log(err);
         return false;
     });
+    
 },[marketStatus])
     useEffect(() => {
         allProduct()
@@ -116,7 +132,7 @@ useEffect(()=>{
                             <div className="section__title">
                                 <h5 className="st-titile">Top Selling Products</h5>
                             </div>
-                            <input type="text" class="input-inset" placeholder="search" onChange={(e) => SearchData(e.target.value)} id="search" />
+                            <input type="text" className="p-3" placeholder="search" onChange={(e) => SearchData(e.target.value)} id="search" />
                             <div className="product__nav-tab">
                                 <ul className="nav nav-tabs" id="flast-sell-tab" role="tablist">
                                 <div className='d-flex justify-content-end'>
@@ -209,7 +225,7 @@ useEffect(()=>{
                             )
                         })
                     }
-                    <div className="pagination">
+                    {/* <div className="pagination">
               <ul className="pagination">
                 {pageNumbers.map((pageNumber) => {
                   return (
@@ -224,7 +240,16 @@ useEffect(()=>{
                   );
                 })}
               </ul>
-            </div>
+            </div> */}
+              <nav aria-label="Page navigation example">
+                <ul className="pagination">
+                  <li className="page-item"><a className="page-link" onClick={() => onpagination()}>Previous</a></li>
+                  <li className="page-item"><a className="page-link" onClick={() => onpagination("F")}>1</a></li>
+                  <li className="page-item"><a className="page-link" onClick={() => onpagination("M")}>2</a></li>
+                  <li className="page-item"><a className="page-link" onClick={() => onpagination("L")}>3</a></li>
+                  <li className="page-item"><a className="page-link" onClick={() => onpagination()}>Next</a></li>
+                </ul>
+              </nav>
                 </div>
             </div>
 

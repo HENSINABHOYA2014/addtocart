@@ -27,10 +27,6 @@ const AdminHeader = () => {
                                 </NavLink>
                             </li>{/* End Search Icon*/}
                             <li className="nav-item dropdown">
-                                <NavLink className="nav-link nav-icon" data-bs-toggle="dropdown">
-                                    <i className="bi bi-bell" />
-                                    <span className="badge bg-primary badge-number">4</span>
-                                </NavLink>{/* End Notification Icon */}
                                 <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
                                     <li className="dropdown-header">
                                         You have 4 new notifications
@@ -89,10 +85,6 @@ const AdminHeader = () => {
                                 </ul>{/* End Notification Dropdown Items */}
                             </li>{/* End Notification Nav */}
                             <li className="nav-item dropdown">
-                                <NavLink className="nav-link nav-icon" data-bs-toggle="dropdown">
-                                    <i className="bi bi-chat-left-text" />
-                                    <span className="badge bg-success badge-number">3</span>
-                                </NavLink>{/* End Messages Icon */}
                                 <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
                                     <li className="dropdown-header">
                                         You have 3 new messages
@@ -146,10 +138,8 @@ const AdminHeader = () => {
                                 </ul>{/* End Messages Dropdown Items */}
                             </li>{/* End Messages Nav */}
                             <li className="nav-item dropdown pe-3">
-                                <NavLink className="nav-link nav-profile d-flex align-items-center pe-0" data-bs-toggle="dropdown">
-                                    <img src="assets/img/profile-img.jpg" alt="Profile" className="rounded-circle" />
-                                    <span className="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
-                                </NavLink>{/* End Profile Iamge Icon */}
+                                    {/* <NavLink to={'/admin/adminLogic'} className="h2">Login</NavLink>&nbsp;&nbsp;&nbsp;
+                                    <NavLink to={'/admin/adminLogic'} className="h2">LoginOut</NavLink> */}
                                 <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                                     <li className="dropdown-header">
                                         <h6>Kevin Anderson</h6>
@@ -203,6 +193,10 @@ const AdminHeader = () => {
                             <NavLink className="nav-link "to={`/admin/admindashboard`} >
                                 <i className="bi bi-grid" />
                                 <span>Dashboard</span>
+                            </NavLink>
+                            <NavLink className="nav-link "to={`/admin/admincategeory`} >
+                                <i className="bi bi-grid" />
+                                <span>Categeory</span>
                             </NavLink>
                         </li>{/* End Dashboard Nav */}
                         <li className="nav-item">

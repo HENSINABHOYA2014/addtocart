@@ -90,7 +90,7 @@ const Slider = () => {
                   <NavLink ><img src="https://wphix.com/template/dukamarket/dukamarket/assets/img/banner/banner-1.jpg" alt /></NavLink>
                 </div>
                 <div className="banner__content ">
-                  <h6><NavLink className="text-decoration">Intelligent <br /> New Touch Control</NavLink></h6>
+                  <h6><NavLink className="text-decoration text-white">Intelligent <br /> New Touch Control</NavLink></h6>
                   <p>Discount 20% On Products</p>
                 </div>
               </div>
@@ -101,7 +101,7 @@ const Slider = () => {
                   <NavLink ><img src="https://wphix.com/template/dukamarket/dukamarket/assets/img/banner/banner-2.jpg" alt /></NavLink>
                 </div>
                 <div className="banner__content">
-                  <h6><NavLink className="text-decoration">On-sale <br /> Best Prices</NavLink></h6>
+                  <h6><NavLink className="text-decoration text-white">On-sale <br /> Best Prices</NavLink></h6>
                   <p>Limited Time: Online Only!</p>
                 </div>
               </div>
@@ -112,7 +112,7 @@ const Slider = () => {
                   <NavLink ><img src="https://wphix.com/template/dukamarket/dukamarket/assets/img/banner/banner-3.jpg" alt /></NavLink>
                 </div>
                 <div className="banner__content">
-                  <h6><NavLink className="text-decoration">Hot Sale <br /> Super Laptops 2022 </NavLink></h6>
+                  <h6><NavLink className="text-decoration text-white">Hot Sale <br /> Super Laptops 2022 </NavLink></h6>
                   <p>Free Shipping All Order</p>
                 </div>
               </div>

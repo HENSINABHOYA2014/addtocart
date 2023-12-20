@@ -14,7 +14,7 @@ const Banner = () => {
                                 </div>
                                 <div className="banner__content">
                                     <span>Bestseller Products</span>
-                                    <h6><NavLink style={{ color: 'white' }}>PC &amp; Docking Station</NavLink></h6>
+                                    <h6><NavLink className={"text-white"}>PC &amp; Docking Station</NavLink></h6>
                                     <p>Discount 20% Off, Top Quality Products</p>
                                 </div>
                             </div>
@@ -26,7 +26,7 @@ const Banner = () => {
                                 </div>
                                 <div className="banner__content">
                                     <span>Featured Products</span>
-                                    <h6><NavLink style={{ color: 'white' }}>Accessories iPhone</NavLink></h6>
+                                    <h6><NavLink className={"text-white"}>Accessories iPhone</NavLink></h6>
                                     <p>Free Shipping All Order Over $99</p>
                                 </div>
                             </div>

@@ -52,6 +52,8 @@ const AdminProduct = () => {
   }, [])
   return (
     <>
+    <div>
+      <main id="main" className="main">
       <div className="row">
         <div className="ps-5 col-lg-9 pt-2">
           <div style={{ boxShadow: '3px 3px 5px 6px #ccc' }} className="mt-3 p-5">
@@ -128,6 +130,9 @@ const AdminProduct = () => {
         </div>
 
       </div>
+      </main>
+    </div>
+      
       {/* <div className="container">
         <div className="title">
           <h2>Bot Order Form</h2>

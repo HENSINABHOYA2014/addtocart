@@ -18,22 +18,28 @@
   },
   "category": [
     {
-      "category_name": "mobile"
+      "category_name": "mobile",
+      "id": 1
     },
     {
-      "category_name": "ipad"
+      "category_name": "ipad",
+      "id": 2
     },
     {
-      "category_name": "headphone"
+      "category_name": "headphone",
+      "id": 3
     },
     {
-      "category_name": "laptop"
+      "category_name": "laptop",
+      "id": 4
     },
     {
-      "category_name": "tv"
+      "category_name": "tv",
+      "id": 5
     },
     {
-      "category_name": "smartwatch"
+      "category_name": "smartwatch",
+      "id": 6
     }
   ],
   "products": [
@@ -45,7 +51,7 @@
       "image": "https://www.91-img.com/gallery_images_uploads/6/3/6347a82b144b02617e24c05688f736d717e412c0.jpg?tr=h-630,c-at_max,q-80",
       "category": "mobile",
       "marketstatus": "trending",
-      "stockstatus": "instock",
+      "stockstatus": "outstock",
       "id": 1,
       "productname": "Oppo",
       "content": "the ability to accept payments wirelessly",
@@ -100,8 +106,8 @@
       "description": "Nice Ipad",
       "image": "https://www.aptronixindia.com/media/catalog/product/cache/31f0162e6f7d821d2237f39577122a8a/i/p/ipad-mini-select-wifi-gold-201911_3.png",
       "category": "ipad",
-      "stockstatus": "outstock",
-      "marketstatus": "best",
+      "stockstatus": "instock",
+      "marketstatus": "upcoming",
       "productname": "puma",
       "id": 5,
       "content": "IPads making them highly portable and easy to carry",
@@ -130,10 +136,11 @@
       "image": "https://www.apple.com/newsroom/images/product/ipad/standard/apple_ipados14_widgets_062220_big.jpg.large.jpg",
       "category": "ipad",
       "stockstatus": "outstock",
-      "marketstatus": "best",
+      "marketstatus": "trending",
       "id": 7,
       "content": "IPads are lightweight and compact, making them highly portable and easy to carry",
-      "sold": "725/1225"
+      "sold": "725/1225",
+      "quantity": null
     },
     {
       "name": "Ipad",
@@ -161,7 +168,8 @@
       "id": 9,
       "marketstatus": "best",
       "content": "Headphones let a single user listen to an audio source privately",
-      "sold": "600/1225"
+      "sold": "600/1225",
+      "quantity": null
     },
     {
       "name": "headphone",
@@ -371,6 +379,40 @@
       "id": 24,
       "content": "A smartwatch is a wearable computing device",
       "sold": "860/1225"
+    },
+    {
+      "categeoryname": "headphone",
+      "productname": "grado",
+      "price": "25000",
+      "qty": "1",
+      "image": "https://www.globalbrandsmagazine.com/wp-content/uploads/2021/08/Beats-by-Dre.jpg",
+      "description": "Nice!headphone",
+      "marketstatus": "latest",
+      "status": "instock",
+      "id": 25
+    },
+    {
+      "categeoryname": "mobile",
+      "productname": "mobile",
+      "price": "1000",
+      "qty": "1",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm6yf8TN1IjJp7GGSWaF0uTzH1FSKORJ7PyQ&usqp=CAU",
+      "description": "Nice!Mobile",
+      "marketstatus": "latest",
+      "status": "instock",
+      "id": 26
+    },
+    {
+      "categeoryname": "mobile",
+      "productname": "apple",
+      "price": "10000",
+      "qty": "1",
+      "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxASDxUQEBAVFhUVFxUQFRAYFRUPEBUQFRUXFhUVFRUYHikhGBsmHhUWIjIiJiosLy8vFyA0OTQuOCkxMCwBCgoKDg0OHBAQGy4mHiYuLi4uLi4uLi4uLi4uLi8uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLv/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABwIDBAUGAQj/xABNEAABAwICAwgNCQUHBQAAAAABAAIDBBEFIQYSMQcTIkFRcXOyFBcjMjRTYXKBkaGztEJSVJKTscTR0yQzY4LBFTVDYsLh8HSDhKLx/8QAGgEBAAIDAQAAAAAAAAAAAAAAAAEFAwQGAv/EAEARAAIBAwAECQgHCAMAAAAAAAABAgMEEQUSITETQWFxgZGhseEGFCIzUVLR8DRTcoKissEWMkJDYpLi8RUjJP/aAAwDAQACEQMRAD8AnFERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAWvxnFoaWB1RO7VY0c5J4mtHGStguB3THazqaI97v9PccR3yR3tAjI/mPKgMyPH8RlGvDSMjYc276dZ5bxEgPaW8xGSuf2nivi6f1H9VYOleNdjMAbnI86kbSdVt+UnkAuePIHI7DFuPaZ10FQY3VANrZt17AEXF7PsDYjL2KdgJg/tXFPF0/qP6qpOL4p4un9R/VUVUGl0zg10k5LXEMDmvkY4PNgAWlxvmRyWvfZs39LpE9rg17y5t8yc3AcoO3JNgO0ON4n4un9R/VVBx/Eh/h0/qP6q1E055Vr5qg8qA2uMad1VKwPnbCASGNa1hfI9x4mtE2ZWl7bk1yC2lbbic5xd6Q15LeYri9M3GR1jsDoogb7A9skkhHIbRht+RxWmaABYZAcQyCuNG6Id7GU3LVinjdl538i",
+      "description": "Nice!Mobile",
+      "marketstatus": "latest",
+      "status": "instock",
+      "id": 27,
+      "stockstatus": "instock"
     }
   ],
   "users": [
@@ -378,18 +420,21 @@
       "username": "Hensi",
       "email": "hensi@gmail.com",
       "password": "12345",
+      "conformpassword": "12345",
       "id": 1
     },
     {
       "username": "Rutvi",
       "email": "rutvi@gmail.com",
       "password": "12345",
+      "conformpassword": "12345",
       "id": 2
     },
     {
       "username": "Shruti",
       "email": "shruti@gmail.com",
       "password": "12345",
+      "conformpassword": "12345",
       "id": 3
     }
   ],
@@ -403,64 +448,24 @@
   ],
   "carts": [
     {
-      "name": "laptop",
-      "price": "30000",
-      "qty": 26,
-      "image": "https://m.media-amazon.com/images/I/71p-M3sPhhL.jpg",
-      "category": "laptop",
-      "productId": 13,
-      "userId": 1,
-      "id": 7
-    },
-    {
-      "name": "laptop",
-      "price": "31000",
-      "qty": 1,
-      "image": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-13-9320/pdp/laptop-xps-13-9320-pdp-hero-nonoled-sl.psd?fmt=png-alpha&wid=570&hei=400&fit=constrain%2C1&qlt=90",
-      "category": "laptop",
-      "productId": 14,
-      "userId": 1,
-      "id": 8
-    },
-    {
       "name": "headphone",
-      "price": "21000",
-      "qty": 1,
-      "image": "https://hammeronline.in/cdn/shop/files/HammerBash2.0Headphones.webp?v=1690436990&width=720",
+      "price": "23000",
+      "qty": 16,
+      "image": "https://www.boat-lifestyle.com/cdn/shop/products/e5881832-36f8-4c1c-a767-10f2c2a55a02_288x.png?v=1685708053",
       "category": "headphone",
-      "productId": 10,
+      "productId": 12,
       "userId": 1,
-      "id": 9
+      "id": 1
     },
     {
-      "name": "tv",
-      "price": "12300",
-      "qty": 8,
-      "image": "https://kodaktv.in//wp-content/uploads/2022/08/2.png",
-      "category": "tv",
-      "productId": 18,
-      "userId": 1,
-      "id": 10
-    },
-    {
-      "name": "tv",
-      "price": "26500",
+      "name": "Mobile",
+      "price": "5000",
       "qty": 1,
-      "image": "https://i.gadgets360cdn.com/large/realme_smart_tv_neo_32_inch_1632472996440.jpg",
-      "category": "tv",
-      "productId": 17,
+      "image": "https://www.91-img.com/gallery_images_uploads/6/3/6347a82b144b02617e24c05688f736d717e412c0.jpg?tr=h-630,c-at_max,q-80",
+      "category": "mobile",
+      "productId": 1,
       "userId": 1,
-      "id": 11
-    },
-    {
-      "name": "headphone",
-      "price": "40000",
-      "qty": 11,
-      "image": "https://media.croma.com/image/upload/v1674045672/Croma%20Assets/Communication/Headphones%20and%20Earphones/Images/239033_0_aq6dfy.png",
-      "category": "headphone",
-      "productId": 11,
-      "userId": 1,
-      "id": 12
+      "id": 2
     },
     {
       "name": "Ipad",
@@ -470,27 +475,48 @@
       "category": "ipad",
       "productId": 8,
       "userId": 1,
-      "id": 13
+      "id": 3
     },
     {
       "name": "Ipad",
       "price": "11000",
-      "qty": 1,
+      "qty": 3,
       "image": "https://www.apple.com/newsroom/images/product/ipad/standard/apple_ipados14_widgets_062220_big.jpg.large.jpg",
       "category": "ipad",
       "productId": 7,
       "userId": 1,
-      "id": 14
+      "id": 4,
+      "addedTime": "9:09:52 PM"
     },
     {
-      "name": "Mobile",
-      "price": "18000",
-      "qty": 9,
-      "image": "https://langgruppe.com/wp-content/uploads/2022/09/iPhone_14_Pro_Max_Gold_Pure_Back_iPhone_14_Pro_Max_Gold_Pure_Front_2-up_Screen__USEN-1.jpg",
-      "category": "mobile",
-      "productId": 3,
+      "name": "SmartWatch",
+      "price": "15000",
+      "qty": 1,
+      "image": "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1685964800/Croma%20Assets/Communication/Wearable%20Devices/Images/262091_f94nye.png?tr=w-600",
+      "category": "smartwatch",
+      "productId": 24,
       "userId": 1,
-      "id": 15
+      "id": 5
+    },
+    {
+      "name": "SmartWatch",
+      "price": "5000",
+      "qty": 5,
+      "image": "https://i.gadgets360cdn.com/products/wearables/large/1551968932_832_apple_watch-series-4-gps-cellular-smartwatch.jpg?downsize=*:360",
+      "category": "smartwatch",
+      "productId": 21,
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "name": "Ipad",
+      "price": "13000",
+      "qty": 1,
+      "image": "https://www.aptronixindia.com/media/catalog/product/cache/31f0162e6f7d821d2237f39577122a8a/i/p/ipad-mini-select-wifi-gold-201911_3.png",
+      "category": "ipad",
+      "productId": 5,
+      "userId": 1,
+      "id": 7
     },
     {
       "name": "Mobile",
@@ -500,17 +526,17 @@
       "category": "mobile",
       "productId": 4,
       "userId": 1,
-      "id": 16
+      "id": 8
     },
     {
-      "name": "Ipad",
-      "price": "20000",
-      "qty": 1,
-      "image": "https://www.komplett.no/img/p/800/1219822.jpg",
-      "category": "ipad",
-      "productId": 6,
+      "name": "Mobile",
+      "price": "18000",
+      "qty": 9,
+      "image": "https://langgruppe.com/wp-content/uploads/2022/09/iPhone_14_Pro_Max_Gold_Pure_Back_iPhone_14_Pro_Max_Gold_Pure_Front_2-up_Screen__USEN-1.jpg",
+      "category": "mobile",
+      "productId": 3,
       "userId": 1,
-      "id": 17
+      "id": 9
     }
   ]
 }

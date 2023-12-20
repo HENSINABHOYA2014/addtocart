@@ -131,7 +131,7 @@ const Home = () => {
                                         <img style={{ height: '200px', width: '25rem', objectFit: 'contain' }} src={val.image} className="card-img-top" alt="..." />
                                         <div className="card-body">
                                             <br />
-                                            <h1 style={{ color: 'DodgerBlue' }}>{val.content}</h1>
+                                            <h3 style={{ color: 'DodgerBlue' }}>{val.content}</h3>
                                             <div className="rating">
                                                 <ul>
                                                     <li><a href="#"><i className="fal fa-star" /></a></li>

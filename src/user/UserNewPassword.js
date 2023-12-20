@@ -1,41 +1,32 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { useState,useEffect } from 'react';
+import { NavLink,Navigate } from 'react-router-dom';
 
-const AdminRegister = () => {
-    const navigate = useNavigate();
-    const[name,setName]=useState("");
-    const[username,setUserName]=useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
 
-    const handleSubmit = async () => {
-        let users = axios.post(`http://localhost:8000/admin`, {
-            email: email,
-            password: password,
-            name:name,
-            username:username
-        });
-
-        if (users) {
-            console.log("User successfully register");
-            navigate('/admin/adminLogic')
-            setEmail("");
-            setPassword("");
-            setName("");
-            setUserName("");
-        } else {
-            console.log("User not Register");
-            return false;
+function UserNewPassword() {
+    const[password,Setpassword] = useState("");
+  const[confirmpassword,SetConfirmpassword] = useState("");
+  
+  const handleSubmit = () => {
+    if (password === confirmPassword) {
+      // Hash the password securely using bcrypt
+      bcrypt.hash(password, 10, function (err, hash) {
+        if (err) {
+          console.error(err);
+          return;
         }
+        // Store the hashed password in localStorage or backend/database
+        localStorage.setItem('hashedPassword', hash);
+        // Redirect or perform further actions
+      });
+    } else {
+      alert('Passwords do not match');
     }
-    return (
+  };
 
-        <>
-        
-            <div>
+  return (
+    <>
+    <div>
                 <main>
                     <div className="container">
                         <section className="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
@@ -55,28 +46,16 @@ const AdminRegister = () => {
                                                     <p className="text-center small">Enter your personal details to create account</p>
                                                 </div>
                                                 <form className="row g-3 needs-validation" noValidate>
+                                                   
                                                     <div className="col-12">
-                                                        <label htmlFor="yourName" className="form-label">Your Name</label>
-                                                        <input type="text" name="name" onChange={(e)=>setName(e.target.value)} className="form-control" id="yourName" required />
-                                                        <div className="invalid-feedback">Please, enter your name!</div>
+                                                        <label htmlFor="yourPassword" className="form-label">New Password</label>
+                                                        <input type="password" name="password" onChange={(e)=>Setpassword(e.target.value)} className="form-control" id="yourPassword" required />
+                                                        <div className="invalid-feedback">Please enter your new password!</div>
                                                     </div>
                                                     <div className="col-12">
-                                                        <label htmlFor="yourEmail" onChange={(e)=>setEmail(e.target.value)}className="form-label">Your Email</label>
-                                                        <input type="email" name="email" className="form-control" id="yourEmail" required />
-                                                        <div className="invalid-feedback">Please enter a valid Email adddress!</div>
-                                                    </div>
-                                                    <div className="col-12">
-                                                        <label htmlFor="yourUsername" className="form-label">Username</label>
-                                                        <div className="input-group has-validation">
-                                                            <span className="input-group-text" id="inputGroupPrepend">@</span>
-                                                            <input type="text" name="username" onChange={(e)=>setUserName(e.target.value)}className="form-control" id="yourUsername" required />
-                                                            <div className="invalid-feedback">Please choose a username.</div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-12">
-                                                        <label htmlFor="yourPassword" className="form-label">Password</label>
-                                                        <input type="password" name="password" onChange={(e)=>setPassword(e.target.value)} className="form-control" id="yourPassword" required />
-                                                        <div className="invalid-feedback">Please enter your password!</div>
+                                                        <label htmlFor="yourPassword" className="form-label">New Password</label>
+                                                        <input type="password" name="password" onChange={(e)=>SetConfirmpassword(e.target.value)} className="form-control" id="yourPassword" required />
+                                                        <div className="invalid-feedback">Please enter your confirm password!</div>
                                                     </div>
                                                     <div className="col-12">
                                                         <div className="form-check">
@@ -86,11 +65,9 @@ const AdminRegister = () => {
                                                         </div>
                                                     </div>
                                                     <div className="col-12" >
-                                                        <NavLink className="btn btn-primary w-100" type="button" defaultValue="Submit" to={`/admin/adminLogic`} onClick= {()=>handleSubmit()} >Submit</NavLink>
+                                                        <NavLink to={`/login`} className="btn btn-primary w-100" type="button" defaultValue="Submit" onClick= {()=>handleSubmit()} >Submit</NavLink>
                                                     </div>
-                                                    <div className="col-6">
-                                                        <NavLink className="btn btn-primary w-100" to={'/admin/adminforgetpassword'} type="button" defaultValue="Submit" onClick= {()=>handleSubmit()} >Forgot Password</NavLink>
-                                                    </div>
+                                                  
                                                     <div className="col-12">
                                                         <p className="small mb-0">Already have an account? <a href="pages-login.html">Log in</a></p>
                                                     </div>
@@ -112,8 +89,8 @@ const AdminRegister = () => {
                 </main>
                 <a href="#" className="back-to-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short" /></a>
             </div>
-
-        </>
-    )
+    </>
+  )
 }
-export default AdminRegister;
+
+export default UserNewPassword;

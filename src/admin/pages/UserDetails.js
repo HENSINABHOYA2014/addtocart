@@ -38,6 +38,8 @@ const UserDetails = () => {
 
     return (
         <>
+           <div>
+            <main id='main' className='main'>
             <div className="ps-5 col-lg-12 pt-2 text-center">
                 <div style={{ boxShadow: '3px 3px 5px 6px #ccc' }} className="mt-3 p-5">
                     <h1 className="text-center">Users Details</h1>
@@ -82,6 +84,8 @@ const UserDetails = () => {
 
                 {/* <ToastContainer /> */}
             </div>
+            </main>
+           </div>
         </>
     )
 }

@@ -33,7 +33,8 @@ const AdminDashboard = () => {
   })
   return (
     <>
-      <div className='p-5'>
+    <main id="main" className="main">
+    <div className='p-5'>
         <div className='row justify-content-between'>
           <div className="col-xl-6 col-xxl-5 d-flex">
             <div className="w-100">
@@ -108,6 +109,8 @@ const AdminDashboard = () => {
 
         </div>
       </div>
+    </main>
+      
     </>
   )
 }
